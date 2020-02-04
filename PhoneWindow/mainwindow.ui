@@ -258,7 +258,7 @@ D E F</string>
      <property name="geometry">
       <rect>
        <x>0</x>
-       <y>-255</y>
+       <y>0</y>
        <width>232</width>
        <height>614</height>
       </rect>
@@ -579,6 +579,9 @@ D E F</string>
       <height>20</height>
      </rect>
     </property>
+    <property name="text">
+     <string>Enter Text here</string>
+    </property>
    </widget>
    <widget class="QPushButton" name="Backspace">
     <property name="geometry">
@@ -590,7 +593,7 @@ D E F</string>
      </rect>
     </property>
     <property name="text">
-     <string>PushButton</string>
+     <string>Delete</string>
     </property>
    </widget>
    <widget class="QPushButton" name="OpenAddressBook">
@@ -603,7 +606,7 @@ D E F</string>
      </rect>
     </property>
     <property name="text">
-     <string>PushButton</string>
+     <string>Contact Book</string>
     </property>
    </widget>
   </widget>

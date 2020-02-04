@@ -357,6 +357,9 @@ public:
         poundbutton = new QPushButton(centralwidget);
         poundbutton->setObjectName(QString::fromUtf8("poundbutton"));
         poundbutton->setGeometry(QRect(270, 310, 70, 70));
+        QFont font;
+        font.setPointSize(30);
+        poundbutton->setFont(font);
         poundbutton->setStyleSheet(QString::fromUtf8("QPushButton\n"
 "\n"
 "{\n"
@@ -377,6 +380,7 @@ public:
         starbutton = new QPushButton(centralwidget);
         starbutton->setObjectName(QString::fromUtf8("starbutton"));
         starbutton->setGeometry(QRect(110, 310, 70, 70));
+        starbutton->setFont(font);
         starbutton->setStyleSheet(QString::fromUtf8("QPushButton\n"
 "\n"
 "{\n"
@@ -413,14 +417,22 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
-        button2->setText(QCoreApplication::translate("MainWindow", "2", nullptr));
-        button9->setText(QCoreApplication::translate("MainWindow", "9", nullptr));
-        button8->setText(QCoreApplication::translate("MainWindow", "8", nullptr));
-        button7->setText(QCoreApplication::translate("MainWindow", "7", nullptr));
-        button6->setText(QCoreApplication::translate("MainWindow", "6", nullptr));
-        button5->setText(QCoreApplication::translate("MainWindow", "5", nullptr));
-        button4->setText(QCoreApplication::translate("MainWindow", "4", nullptr));
-        button3->setText(QCoreApplication::translate("MainWindow", "3", nullptr));
+        button2->setText(QCoreApplication::translate("MainWindow", "2\n"
+"A B C", nullptr));
+        button9->setText(QCoreApplication::translate("MainWindow", "9\n"
+"W X Y Z", nullptr));
+        button8->setText(QCoreApplication::translate("MainWindow", "8\n"
+"T U V", nullptr));
+        button7->setText(QCoreApplication::translate("MainWindow", "7\n"
+"P Q R S", nullptr));
+        button6->setText(QCoreApplication::translate("MainWindow", "6\n"
+"M N O", nullptr));
+        button5->setText(QCoreApplication::translate("MainWindow", "5\n"
+"J K L", nullptr));
+        button4->setText(QCoreApplication::translate("MainWindow", "4\n"
+"G H I", nullptr));
+        button3->setText(QCoreApplication::translate("MainWindow", "3\n"
+"D E F", nullptr));
         button1->setText(QCoreApplication::translate("MainWindow", "1", nullptr));
         callbutton->setText(QCoreApplication::translate("MainWindow", "Call", nullptr));
         label_3->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
@@ -457,8 +469,9 @@ public:
         button0->setText(QCoreApplication::translate("MainWindow", "0", nullptr));
         starbutton->setText(QCoreApplication::translate("MainWindow", "*", nullptr));
         label->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
-        Backspace->setText(QCoreApplication::translate("MainWindow", "PushButton", nullptr));
-        OpenAddressBook->setText(QCoreApplication::translate("MainWindow", "PushButton", nullptr));
+        display->setText(QCoreApplication::translate("MainWindow", "Enter Text here", nullptr));
+        Backspace->setText(QCoreApplication::translate("MainWindow", "Delete", nullptr));
+        OpenAddressBook->setText(QCoreApplication::translate("MainWindow", "Contact Book", nullptr));
     } // retranslateUi
 
 };
