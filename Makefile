@@ -17,7 +17,7 @@ CXX           = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefau
 DEFINES       = -DQT_DEPRECATED_WARNINGS -DQT_QML_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB
 CFLAGS        = -pipe -g $(EXPORT_ARCH_ARGS) -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -mmacosx-version-min=10.12 -Wall -W -fPIC $(DEFINES)
 CXXFLAGS      = -pipe -stdlib=libc++ -g -std=gnu++11 $(EXPORT_ARCH_ARGS) -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -mmacosx-version-min=10.12 -Wall -W -fPIC $(DEFINES)
-INCPATH       = -I. -I../../../Desktop/QT/5.12.6/clang_64/lib/QtWidgets.framework/Headers -I../../../Desktop/QT/5.12.6/clang_64/lib/QtGui.framework/Headers -I../../../Desktop/QT/5.12.6/clang_64/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/OpenGL.framework/Headers -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/AGL.framework/Headers -I. -I../../../Desktop/QT/5.12.6/clang_64/mkspecs/macx-clang -F/Users/zachary/Desktop/QT/5.12.6/clang_64/lib
+INCPATH       = -I. -I../../Desktop/QT/5.12.6/clang_64/lib/QtWidgets.framework/Headers -I../../Desktop/QT/5.12.6/clang_64/lib/QtGui.framework/Headers -I../../Desktop/QT/5.12.6/clang_64/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/OpenGL.framework/Headers -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/AGL.framework/Headers -I. -I../../Desktop/QT/5.12.6/clang_64/mkspecs/macx-clang -F/Users/zachary/Desktop/QT/5.12.6/clang_64/lib
 QMAKE         = /Users/zachary/Desktop/QT/5.12.6/clang_64/bin/qmake
 DEL_FILE      = rm -f
 CHK_DIR_EXISTS= test -d
@@ -37,7 +37,7 @@ MOVE          = mv -f
 TAR           = tar -cf
 COMPRESS      = gzip -9f
 DISTNAME      = PhoneWindow1.0.0
-DISTDIR = /Users/zachary/Downloads/Phone-Keenan/PhoneWindow/.tmp/PhoneWindow1.0.0
+DISTDIR = /Users/zachary/PP/Phone/.tmp/PhoneWindow1.0.0
 LINK          = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++
 LFLAGS        = -stdlib=libc++ -headerpad_max_install_names $(EXPORT_ARCH_ARGS) -Wl,-syslibroot,/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -mmacosx-version-min=10.12 -Wl,-rpath,@executable_path/../Frameworks -Wl,-rpath,/Users/zachary/Desktop/QT/5.12.6/clang_64/lib
 LIBS          = $(SUBLIBS) -F/Users/zachary/Desktop/QT/5.12.6/clang_64/lib -framework QtWidgets -framework QtGui -framework QtCore -framework DiskArbitration -framework IOKit -framework OpenGL -framework AGL   
@@ -53,204 +53,208 @@ OBJECTS_DIR   = ./
 ####### Files
 
 SOURCES       = main.cpp \
-		mainwindow.cpp moc_mainwindow.cpp
+		mainwindow.cpp \
+		myadressbookmodel.cpp moc_mainwindow.cpp
 OBJECTS       = main.o \
 		mainwindow.o \
+		myadressbookmodel.o \
 		moc_mainwindow.o
-DIST          = ../../../Desktop/QT/5.12.6/clang_64/mkspecs/features/spec_pre.prf \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/qdevice.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/features/device_config.prf \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/common/unix.conf \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/common/mac.conf \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/common/macx.conf \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/common/sanitize.conf \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/common/gcc-base.conf \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/common/gcc-base-mac.conf \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/common/clang.conf \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/common/clang-mac.conf \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/qconfig.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3danimation.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3danimation_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dcore.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dcore_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dextras.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dextras_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dinput.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dinput_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dlogic.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dlogic_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dquick.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dquick_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dquickanimation.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dquickanimation_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dquickextras.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dquickextras_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dquickinput.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dquickinput_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dquickrender.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dquickrender_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dquickscene2d.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dquickscene2d_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3drender.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3drender_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_accessibility_support_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_bluetooth.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_bluetooth_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_bootstrap_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_charts.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_charts_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_clipboard_support_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_concurrent.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_concurrent_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_core.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_core_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_datavisualization.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_datavisualization_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_dbus.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_dbus_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_designer.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_designer_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_designercomponents_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_devicediscovery_support_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_edid_support_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_eventdispatcher_support_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_fb_support_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_fontdatabase_support_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_gamepad.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_gamepad_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_graphics_support_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_gui.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_gui_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_help.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_help_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_location.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_location_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_macextras.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_macextras_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_multimedia.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_multimedia_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_multimediawidgets.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_multimediawidgets_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_network.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_network_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_networkauth.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_networkauth_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_nfc.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_nfc_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_opengl.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_opengl_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_openglextensions.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_openglextensions_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_packetprotocol_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_platformcompositor_support_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_positioning.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_positioning_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_positioningquick.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_positioningquick_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_printsupport.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_printsupport_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_purchasing.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_purchasing_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_qml.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_qml_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_qmldebug_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_qmldevtools_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_qmltest.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_qmltest_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_qtmultimediaquicktools_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_quick.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_quick_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_quickcontrols2.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_quickcontrols2_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_quickparticles_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_quickshapes_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_quicktemplates2.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_quicktemplates2_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_quickwidgets.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_quickwidgets_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_remoteobjects.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_remoteobjects_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_repparser.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_repparser_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_script.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_script_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_scripttools.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_scripttools_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_scxml.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_scxml_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_sensors.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_sensors_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_serialbus.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_serialbus_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_serialport.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_serialport_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_service_support_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_sql.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_sql_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_svg.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_svg_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_testlib.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_testlib_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_texttospeech.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_texttospeech_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_theme_support_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_uiplugin.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_uitools.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_uitools_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_virtualkeyboard.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_virtualkeyboard_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_webchannel.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_webchannel_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_webengine.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_webengine_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_webenginecore.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_webenginecore_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_webenginecoreheaders_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_webenginewidgets.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_webenginewidgets_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_websockets.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_websockets_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_webview.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_webview_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_widgets.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_widgets_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_xml.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_xml_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_xmlpatterns.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_xmlpatterns_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/features/qt_functions.prf \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/features/qt_config.prf \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/macx-clang/qmake.conf \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/features/spec_post.prf \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/features/exclusive_builds.prf \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/features/mac/sdk.prf \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/features/toolchain.prf \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/features/mac/toolchain.prf \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/features/default_pre.prf \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/features/mac/default_pre.prf \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/features/resolve_config.prf \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/features/default_post.prf \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/features/mac/default_post.prf \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/features/mac/objective_c.prf \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/features/qml_debug.prf \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/features/mac/mac.prf \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/features/warn_on.prf \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/features/qt.prf \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/features/resources.prf \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/features/moc.prf \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/features/unix/opengl.prf \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/features/uic.prf \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/features/unix/thread.prf \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/features/qmake_use.prf \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/features/file_copies.prf \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/features/mac/rez.prf \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/features/mac/asset_catalogs.prf \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/features/testcase_targets.prf \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/features/exceptions.prf \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/features/yacc.prf \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/features/lex.prf \
-		PhoneWindow.pro mainwindow.h main.cpp \
-		mainwindow.cpp
+DIST          = ../../Desktop/QT/5.12.6/clang_64/mkspecs/features/spec_pre.prf \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/qdevice.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/features/device_config.prf \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/common/unix.conf \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/common/mac.conf \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/common/macx.conf \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/common/sanitize.conf \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/common/gcc-base.conf \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/common/gcc-base-mac.conf \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/common/clang.conf \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/common/clang-mac.conf \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/qconfig.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3danimation.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3danimation_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dcore.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dcore_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dextras.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dextras_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dinput.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dinput_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dlogic.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dlogic_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dquick.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dquick_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dquickanimation.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dquickanimation_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dquickextras.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dquickextras_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dquickinput.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dquickinput_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dquickrender.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dquickrender_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dquickscene2d.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dquickscene2d_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3drender.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3drender_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_accessibility_support_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_bluetooth.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_bluetooth_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_bootstrap_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_charts.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_charts_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_clipboard_support_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_concurrent.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_concurrent_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_core.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_core_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_datavisualization.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_datavisualization_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_dbus.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_dbus_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_designer.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_designer_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_designercomponents_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_devicediscovery_support_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_edid_support_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_eventdispatcher_support_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_fb_support_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_fontdatabase_support_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_gamepad.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_gamepad_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_graphics_support_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_gui.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_gui_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_help.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_help_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_location.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_location_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_macextras.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_macextras_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_multimedia.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_multimedia_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_multimediawidgets.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_multimediawidgets_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_network.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_network_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_networkauth.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_networkauth_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_nfc.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_nfc_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_opengl.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_opengl_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_openglextensions.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_openglextensions_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_packetprotocol_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_platformcompositor_support_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_positioning.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_positioning_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_positioningquick.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_positioningquick_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_printsupport.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_printsupport_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_purchasing.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_purchasing_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_qml.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_qml_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_qmldebug_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_qmldevtools_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_qmltest.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_qmltest_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_qtmultimediaquicktools_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_quick.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_quick_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_quickcontrols2.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_quickcontrols2_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_quickparticles_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_quickshapes_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_quicktemplates2.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_quicktemplates2_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_quickwidgets.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_quickwidgets_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_remoteobjects.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_remoteobjects_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_repparser.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_repparser_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_script.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_script_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_scripttools.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_scripttools_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_scxml.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_scxml_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_sensors.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_sensors_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_serialbus.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_serialbus_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_serialport.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_serialport_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_service_support_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_sql.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_sql_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_svg.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_svg_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_testlib.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_testlib_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_texttospeech.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_texttospeech_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_theme_support_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_uiplugin.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_uitools.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_uitools_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_virtualkeyboard.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_virtualkeyboard_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_webchannel.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_webchannel_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_webengine.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_webengine_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_webenginecore.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_webenginecore_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_webenginecoreheaders_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_webenginewidgets.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_webenginewidgets_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_websockets.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_websockets_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_webview.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_webview_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_widgets.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_widgets_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_xml.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_xml_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_xmlpatterns.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_xmlpatterns_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/features/qt_functions.prf \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/features/qt_config.prf \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/macx-clang/qmake.conf \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/features/spec_post.prf \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/features/exclusive_builds.prf \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/features/mac/sdk.prf \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/features/toolchain.prf \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/features/mac/toolchain.prf \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/features/default_pre.prf \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/features/mac/default_pre.prf \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/features/resolve_config.prf \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/features/default_post.prf \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/features/mac/default_post.prf \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/features/mac/objective_c.prf \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/features/qml_debug.prf \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/features/mac/mac.prf \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/features/warn_on.prf \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/features/qt.prf \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/features/resources.prf \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/features/moc.prf \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/features/unix/opengl.prf \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/features/uic.prf \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/features/unix/thread.prf \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/features/qmake_use.prf \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/features/file_copies.prf \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/features/mac/rez.prf \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/features/mac/asset_catalogs.prf \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/features/testcase_targets.prf \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/features/exceptions.prf \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/features/yacc.prf \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/features/lex.prf \
+		PhoneWindow.pro mainwindow.h \
+		myadressbookmodel.h main.cpp \
+		mainwindow.cpp \
+		myadressbookmodel.cpp
 QMAKE_TARGET  = PhoneWindow
 DESTDIR       = 
 TARGET        = PhoneWindow.app/Contents/MacOS/PhoneWindow
@@ -262,7 +266,7 @@ EXPORT_QMAKE_XCODE_DEVELOPER_PATH = /Applications/Xcode.app/Contents/Developer
 EXPORT_VALID_ARCHS = x86_64
 EXPORT_ACTIVE_ARCHS = $(filter $(EXPORT_VALID_ARCHS), $(ARCHS))
 EXPORT_ARCH_ARGS = $(foreach arch, $(if $(EXPORT_ACTIVE_ARCHS), $(EXPORT_ACTIVE_ARCHS), $(EXPORT_VALID_ARCHS)), -arch $(arch))
-EXPORT__PRO_FILE_ = /Users/zachary/Downloads/Phone-Keenan/PhoneWindow/PhoneWindow.pro
+EXPORT__PRO_FILE_ = /Users/zachary/PP/Phone/PhoneWindow.pro
 
 
 include /Users/zachary/Desktop/QT/5.12.6/clang_64/mkspecs/features/mac/sdk.mk
@@ -273,399 +277,399 @@ PhoneWindow.app/Contents/MacOS/PhoneWindow: ui_mainwindow.h $(OBJECTS)
 	@test -d PhoneWindow.app/Contents/MacOS/ || mkdir -p PhoneWindow.app/Contents/MacOS/
 	$(LINK) $(LFLAGS) -o $(TARGET) $(OBJECTS) $(OBJCOMP) $(LIBS)
 
-Makefile: PhoneWindow.pro ../../../Desktop/QT/5.12.6/clang_64/mkspecs/macx-clang/qmake.conf ../../../Desktop/QT/5.12.6/clang_64/mkspecs/features/spec_pre.prf \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/qdevice.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/features/device_config.prf \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/common/unix.conf \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/common/mac.conf \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/common/macx.conf \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/common/sanitize.conf \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/common/gcc-base.conf \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/common/gcc-base-mac.conf \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/common/clang.conf \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/common/clang-mac.conf \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/qconfig.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3danimation.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3danimation_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dcore.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dcore_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dextras.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dextras_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dinput.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dinput_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dlogic.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dlogic_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dquick.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dquick_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dquickanimation.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dquickanimation_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dquickextras.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dquickextras_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dquickinput.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dquickinput_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dquickrender.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dquickrender_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dquickscene2d.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dquickscene2d_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3drender.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3drender_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_accessibility_support_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_bluetooth.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_bluetooth_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_bootstrap_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_charts.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_charts_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_clipboard_support_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_concurrent.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_concurrent_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_core.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_core_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_datavisualization.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_datavisualization_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_dbus.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_dbus_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_designer.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_designer_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_designercomponents_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_devicediscovery_support_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_edid_support_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_eventdispatcher_support_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_fb_support_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_fontdatabase_support_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_gamepad.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_gamepad_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_graphics_support_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_gui.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_gui_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_help.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_help_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_location.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_location_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_macextras.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_macextras_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_multimedia.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_multimedia_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_multimediawidgets.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_multimediawidgets_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_network.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_network_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_networkauth.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_networkauth_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_nfc.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_nfc_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_opengl.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_opengl_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_openglextensions.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_openglextensions_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_packetprotocol_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_platformcompositor_support_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_positioning.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_positioning_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_positioningquick.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_positioningquick_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_printsupport.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_printsupport_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_purchasing.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_purchasing_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_qml.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_qml_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_qmldebug_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_qmldevtools_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_qmltest.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_qmltest_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_qtmultimediaquicktools_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_quick.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_quick_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_quickcontrols2.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_quickcontrols2_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_quickparticles_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_quickshapes_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_quicktemplates2.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_quicktemplates2_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_quickwidgets.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_quickwidgets_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_remoteobjects.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_remoteobjects_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_repparser.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_repparser_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_script.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_script_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_scripttools.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_scripttools_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_scxml.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_scxml_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_sensors.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_sensors_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_serialbus.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_serialbus_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_serialport.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_serialport_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_service_support_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_sql.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_sql_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_svg.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_svg_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_testlib.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_testlib_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_texttospeech.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_texttospeech_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_theme_support_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_uiplugin.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_uitools.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_uitools_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_virtualkeyboard.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_virtualkeyboard_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_webchannel.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_webchannel_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_webengine.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_webengine_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_webenginecore.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_webenginecore_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_webenginecoreheaders_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_webenginewidgets.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_webenginewidgets_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_websockets.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_websockets_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_webview.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_webview_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_widgets.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_widgets_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_xml.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_xml_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_xmlpatterns.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_xmlpatterns_private.pri \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/features/qt_functions.prf \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/features/qt_config.prf \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/macx-clang/qmake.conf \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/features/spec_post.prf \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/features/exclusive_builds.prf \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/features/mac/sdk.prf \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/features/toolchain.prf \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/features/mac/toolchain.prf \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/features/default_pre.prf \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/features/mac/default_pre.prf \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/features/resolve_config.prf \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/features/default_post.prf \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/features/mac/default_post.prf \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/features/mac/objective_c.prf \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/features/qml_debug.prf \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/features/mac/mac.prf \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/features/warn_on.prf \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/features/qt.prf \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/features/resources.prf \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/features/moc.prf \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/features/unix/opengl.prf \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/features/uic.prf \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/features/unix/thread.prf \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/features/qmake_use.prf \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/features/file_copies.prf \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/features/mac/rez.prf \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/features/mac/asset_catalogs.prf \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/features/testcase_targets.prf \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/features/exceptions.prf \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/features/yacc.prf \
-		../../../Desktop/QT/5.12.6/clang_64/mkspecs/features/lex.prf \
+Makefile: PhoneWindow.pro ../../Desktop/QT/5.12.6/clang_64/mkspecs/macx-clang/qmake.conf ../../Desktop/QT/5.12.6/clang_64/mkspecs/features/spec_pre.prf \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/qdevice.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/features/device_config.prf \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/common/unix.conf \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/common/mac.conf \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/common/macx.conf \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/common/sanitize.conf \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/common/gcc-base.conf \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/common/gcc-base-mac.conf \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/common/clang.conf \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/common/clang-mac.conf \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/qconfig.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3danimation.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3danimation_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dcore.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dcore_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dextras.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dextras_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dinput.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dinput_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dlogic.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dlogic_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dquick.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dquick_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dquickanimation.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dquickanimation_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dquickextras.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dquickextras_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dquickinput.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dquickinput_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dquickrender.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dquickrender_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dquickscene2d.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dquickscene2d_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3drender.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3drender_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_accessibility_support_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_bluetooth.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_bluetooth_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_bootstrap_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_charts.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_charts_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_clipboard_support_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_concurrent.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_concurrent_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_core.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_core_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_datavisualization.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_datavisualization_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_dbus.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_dbus_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_designer.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_designer_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_designercomponents_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_devicediscovery_support_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_edid_support_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_eventdispatcher_support_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_fb_support_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_fontdatabase_support_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_gamepad.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_gamepad_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_graphics_support_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_gui.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_gui_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_help.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_help_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_location.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_location_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_macextras.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_macextras_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_multimedia.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_multimedia_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_multimediawidgets.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_multimediawidgets_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_network.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_network_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_networkauth.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_networkauth_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_nfc.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_nfc_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_opengl.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_opengl_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_openglextensions.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_openglextensions_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_packetprotocol_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_platformcompositor_support_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_positioning.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_positioning_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_positioningquick.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_positioningquick_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_printsupport.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_printsupport_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_purchasing.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_purchasing_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_qml.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_qml_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_qmldebug_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_qmldevtools_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_qmltest.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_qmltest_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_qtmultimediaquicktools_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_quick.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_quick_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_quickcontrols2.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_quickcontrols2_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_quickparticles_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_quickshapes_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_quicktemplates2.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_quicktemplates2_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_quickwidgets.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_quickwidgets_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_remoteobjects.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_remoteobjects_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_repparser.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_repparser_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_script.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_script_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_scripttools.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_scripttools_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_scxml.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_scxml_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_sensors.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_sensors_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_serialbus.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_serialbus_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_serialport.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_serialport_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_service_support_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_sql.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_sql_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_svg.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_svg_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_testlib.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_testlib_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_texttospeech.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_texttospeech_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_theme_support_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_uiplugin.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_uitools.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_uitools_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_virtualkeyboard.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_virtualkeyboard_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_webchannel.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_webchannel_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_webengine.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_webengine_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_webenginecore.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_webenginecore_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_webenginecoreheaders_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_webenginewidgets.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_webenginewidgets_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_websockets.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_websockets_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_webview.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_webview_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_widgets.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_widgets_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_xml.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_xml_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_xmlpatterns.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_xmlpatterns_private.pri \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/features/qt_functions.prf \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/features/qt_config.prf \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/macx-clang/qmake.conf \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/features/spec_post.prf \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/features/exclusive_builds.prf \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/features/mac/sdk.prf \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/features/toolchain.prf \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/features/mac/toolchain.prf \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/features/default_pre.prf \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/features/mac/default_pre.prf \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/features/resolve_config.prf \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/features/default_post.prf \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/features/mac/default_post.prf \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/features/mac/objective_c.prf \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/features/qml_debug.prf \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/features/mac/mac.prf \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/features/warn_on.prf \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/features/qt.prf \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/features/resources.prf \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/features/moc.prf \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/features/unix/opengl.prf \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/features/uic.prf \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/features/unix/thread.prf \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/features/qmake_use.prf \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/features/file_copies.prf \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/features/mac/rez.prf \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/features/mac/asset_catalogs.prf \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/features/testcase_targets.prf \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/features/exceptions.prf \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/features/yacc.prf \
+		../../Desktop/QT/5.12.6/clang_64/mkspecs/features/lex.prf \
 		PhoneWindow.pro \
-		../../../Desktop/QT/5.12.6/clang_64/lib/QtWidgets.framework/QtWidgets.prl \
-		../../../Desktop/QT/5.12.6/clang_64/lib/QtGui.framework/QtGui.prl \
-		../../../Desktop/QT/5.12.6/clang_64/lib/QtCore.framework/QtCore.prl
+		../../Desktop/QT/5.12.6/clang_64/lib/QtWidgets.framework/QtWidgets.prl \
+		../../Desktop/QT/5.12.6/clang_64/lib/QtGui.framework/QtGui.prl \
+		../../Desktop/QT/5.12.6/clang_64/lib/QtCore.framework/QtCore.prl
 	$(QMAKE) -o Makefile PhoneWindow.pro -spec macx-clang CONFIG+=debug CONFIG+=x86_64 CONFIG+=qml_debug
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/features/spec_pre.prf:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/qdevice.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/features/device_config.prf:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/common/unix.conf:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/common/mac.conf:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/common/macx.conf:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/common/sanitize.conf:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/common/gcc-base.conf:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/common/gcc-base-mac.conf:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/common/clang.conf:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/common/clang-mac.conf:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/qconfig.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3danimation.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3danimation_private.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dcore.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dcore_private.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dextras.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dextras_private.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dinput.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dinput_private.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dlogic.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dlogic_private.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dquick.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dquick_private.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dquickanimation.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dquickanimation_private.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dquickextras.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dquickextras_private.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dquickinput.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dquickinput_private.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dquickrender.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dquickrender_private.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dquickscene2d.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dquickscene2d_private.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3drender.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3drender_private.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_accessibility_support_private.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_bluetooth.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_bluetooth_private.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_bootstrap_private.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_charts.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_charts_private.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_clipboard_support_private.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_concurrent.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_concurrent_private.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_core.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_core_private.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_datavisualization.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_datavisualization_private.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_dbus.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_dbus_private.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_designer.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_designer_private.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_designercomponents_private.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_devicediscovery_support_private.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_edid_support_private.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_eventdispatcher_support_private.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_fb_support_private.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_fontdatabase_support_private.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_gamepad.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_gamepad_private.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_graphics_support_private.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_gui.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_gui_private.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_help.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_help_private.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_location.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_location_private.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_macextras.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_macextras_private.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_multimedia.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_multimedia_private.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_multimediawidgets.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_multimediawidgets_private.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_network.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_network_private.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_networkauth.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_networkauth_private.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_nfc.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_nfc_private.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_opengl.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_opengl_private.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_openglextensions.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_openglextensions_private.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_packetprotocol_private.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_platformcompositor_support_private.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_positioning.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_positioning_private.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_positioningquick.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_positioningquick_private.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_printsupport.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_printsupport_private.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_purchasing.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_purchasing_private.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_qml.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_qml_private.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_qmldebug_private.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_qmldevtools_private.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_qmltest.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_qmltest_private.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_qtmultimediaquicktools_private.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_quick.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_quick_private.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_quickcontrols2.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_quickcontrols2_private.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_quickparticles_private.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_quickshapes_private.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_quicktemplates2.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_quicktemplates2_private.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_quickwidgets.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_quickwidgets_private.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_remoteobjects.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_remoteobjects_private.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_repparser.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_repparser_private.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_script.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_script_private.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_scripttools.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_scripttools_private.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_scxml.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_scxml_private.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_sensors.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_sensors_private.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_serialbus.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_serialbus_private.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_serialport.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_serialport_private.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_service_support_private.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_sql.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_sql_private.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_svg.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_svg_private.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_testlib.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_testlib_private.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_texttospeech.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_texttospeech_private.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_theme_support_private.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_uiplugin.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_uitools.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_uitools_private.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_virtualkeyboard.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_virtualkeyboard_private.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_webchannel.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_webchannel_private.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_webengine.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_webengine_private.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_webenginecore.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_webenginecore_private.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_webenginecoreheaders_private.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_webenginewidgets.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_webenginewidgets_private.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_websockets.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_websockets_private.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_webview.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_webview_private.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_widgets.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_widgets_private.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_xml.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_xml_private.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_xmlpatterns.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_xmlpatterns_private.pri:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/features/qt_functions.prf:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/features/qt_config.prf:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/macx-clang/qmake.conf:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/features/spec_post.prf:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/features/exclusive_builds.prf:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/features/mac/sdk.prf:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/features/toolchain.prf:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/features/mac/toolchain.prf:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/features/default_pre.prf:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/features/mac/default_pre.prf:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/features/resolve_config.prf:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/features/default_post.prf:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/features/mac/default_post.prf:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/features/mac/objective_c.prf:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/features/qml_debug.prf:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/features/mac/mac.prf:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/features/warn_on.prf:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/features/qt.prf:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/features/resources.prf:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/features/moc.prf:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/features/unix/opengl.prf:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/features/uic.prf:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/features/unix/thread.prf:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/features/qmake_use.prf:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/features/file_copies.prf:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/features/mac/rez.prf:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/features/mac/asset_catalogs.prf:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/features/testcase_targets.prf:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/features/exceptions.prf:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/features/yacc.prf:
-../../../Desktop/QT/5.12.6/clang_64/mkspecs/features/lex.prf:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/features/spec_pre.prf:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/qdevice.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/features/device_config.prf:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/common/unix.conf:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/common/mac.conf:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/common/macx.conf:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/common/sanitize.conf:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/common/gcc-base.conf:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/common/gcc-base-mac.conf:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/common/clang.conf:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/common/clang-mac.conf:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/qconfig.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3danimation.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3danimation_private.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dcore.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dcore_private.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dextras.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dextras_private.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dinput.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dinput_private.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dlogic.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dlogic_private.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dquick.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dquick_private.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dquickanimation.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dquickanimation_private.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dquickextras.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dquickextras_private.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dquickinput.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dquickinput_private.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dquickrender.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dquickrender_private.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dquickscene2d.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3dquickscene2d_private.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3drender.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_3drender_private.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_accessibility_support_private.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_bluetooth.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_bluetooth_private.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_bootstrap_private.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_charts.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_charts_private.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_clipboard_support_private.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_concurrent.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_concurrent_private.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_core.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_core_private.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_datavisualization.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_datavisualization_private.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_dbus.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_dbus_private.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_designer.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_designer_private.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_designercomponents_private.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_devicediscovery_support_private.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_edid_support_private.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_eventdispatcher_support_private.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_fb_support_private.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_fontdatabase_support_private.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_gamepad.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_gamepad_private.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_graphics_support_private.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_gui.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_gui_private.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_help.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_help_private.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_location.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_location_private.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_macextras.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_macextras_private.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_multimedia.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_multimedia_private.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_multimediawidgets.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_multimediawidgets_private.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_network.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_network_private.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_networkauth.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_networkauth_private.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_nfc.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_nfc_private.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_opengl.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_opengl_private.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_openglextensions.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_openglextensions_private.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_packetprotocol_private.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_platformcompositor_support_private.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_positioning.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_positioning_private.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_positioningquick.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_positioningquick_private.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_printsupport.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_printsupport_private.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_purchasing.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_purchasing_private.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_qml.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_qml_private.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_qmldebug_private.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_qmldevtools_private.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_qmltest.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_qmltest_private.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_qtmultimediaquicktools_private.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_quick.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_quick_private.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_quickcontrols2.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_quickcontrols2_private.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_quickparticles_private.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_quickshapes_private.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_quicktemplates2.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_quicktemplates2_private.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_quickwidgets.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_quickwidgets_private.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_remoteobjects.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_remoteobjects_private.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_repparser.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_repparser_private.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_script.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_script_private.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_scripttools.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_scripttools_private.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_scxml.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_scxml_private.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_sensors.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_sensors_private.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_serialbus.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_serialbus_private.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_serialport.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_serialport_private.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_service_support_private.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_sql.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_sql_private.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_svg.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_svg_private.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_testlib.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_testlib_private.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_texttospeech.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_texttospeech_private.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_theme_support_private.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_uiplugin.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_uitools.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_uitools_private.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_virtualkeyboard.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_virtualkeyboard_private.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_webchannel.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_webchannel_private.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_webengine.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_webengine_private.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_webenginecore.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_webenginecore_private.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_webenginecoreheaders_private.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_webenginewidgets.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_webenginewidgets_private.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_websockets.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_websockets_private.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_webview.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_webview_private.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_widgets.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_widgets_private.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_xml.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_xml_private.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_xmlpatterns.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/modules/qt_lib_xmlpatterns_private.pri:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/features/qt_functions.prf:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/features/qt_config.prf:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/macx-clang/qmake.conf:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/features/spec_post.prf:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/features/exclusive_builds.prf:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/features/mac/sdk.prf:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/features/toolchain.prf:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/features/mac/toolchain.prf:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/features/default_pre.prf:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/features/mac/default_pre.prf:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/features/resolve_config.prf:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/features/default_post.prf:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/features/mac/default_post.prf:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/features/mac/objective_c.prf:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/features/qml_debug.prf:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/features/mac/mac.prf:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/features/warn_on.prf:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/features/qt.prf:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/features/resources.prf:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/features/moc.prf:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/features/unix/opengl.prf:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/features/uic.prf:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/features/unix/thread.prf:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/features/qmake_use.prf:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/features/file_copies.prf:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/features/mac/rez.prf:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/features/mac/asset_catalogs.prf:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/features/testcase_targets.prf:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/features/exceptions.prf:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/features/yacc.prf:
+../../Desktop/QT/5.12.6/clang_64/mkspecs/features/lex.prf:
 PhoneWindow.pro:
-../../../Desktop/QT/5.12.6/clang_64/lib/QtWidgets.framework/QtWidgets.prl:
-../../../Desktop/QT/5.12.6/clang_64/lib/QtGui.framework/QtGui.prl:
-../../../Desktop/QT/5.12.6/clang_64/lib/QtCore.framework/QtCore.prl:
+../../Desktop/QT/5.12.6/clang_64/lib/QtWidgets.framework/QtWidgets.prl:
+../../Desktop/QT/5.12.6/clang_64/lib/QtGui.framework/QtGui.prl:
+../../Desktop/QT/5.12.6/clang_64/lib/QtCore.framework/QtCore.prl:
 qmake: FORCE
 	@$(QMAKE) -o Makefile PhoneWindow.pro -spec macx-clang CONFIG+=debug CONFIG+=x86_64 CONFIG+=qml_debug
 
@@ -682,7 +686,7 @@ PhoneWindow.app/Contents/Resources/empty.lproj:
 PhoneWindow.app/Contents/Info.plist: 
 	@test -d PhoneWindow.app/Contents || mkdir -p PhoneWindow.app/Contents
 	@$(DEL_FILE) PhoneWindow.app/Contents/Info.plist
-	@sed -e "s,@SHORT_VERSION@,1.0,g" -e "s,\$${QMAKE_SHORT_VERSION},1.0,g" -e "s,@FULL_VERSION@,1.0.0,g" -e "s,\$${QMAKE_FULL_VERSION},1.0.0,g" -e "s,@TYPEINFO@,????,g" -e "s,\$${QMAKE_PKGINFO_TYPEINFO},????,g" -e "s,@BUNDLEIDENTIFIER@,Nothing.PhoneWindow,g" -e "s,\$${PRODUCT_BUNDLE_IDENTIFIER},Nothing.PhoneWindow,g" -e "s,\$${MACOSX_DEPLOYMENT_TARGET},10.12,g" -e "s,\$${IPHONEOS_DEPLOYMENT_TARGET},,g" -e "s,\$${TVOS_DEPLOYMENT_TARGET},,g" -e "s,\$${WATCHOS_DEPLOYMENT_TARGET},,g" -e "s,@ICON@,,g" -e "s,\$${ASSETCATALOG_COMPILER_APPICON_NAME},,g" -e "s,@EXECUTABLE@,PhoneWindow,g" -e "s,@LIBRARY@,PhoneWindow,g" -e "s,\$${EXECUTABLE_NAME},PhoneWindow,g" -e "s,@TYPEINFO@,????,g" -e "s,\$${QMAKE_PKGINFO_TYPEINFO},????,g" ../../../Desktop/QT/5.12.6/clang_64/mkspecs/macx-clang/Info.plist.app >PhoneWindow.app/Contents/Info.plist
+	@sed -e "s,@SHORT_VERSION@,1.0,g" -e "s,\$${QMAKE_SHORT_VERSION},1.0,g" -e "s,@FULL_VERSION@,1.0.0,g" -e "s,\$${QMAKE_FULL_VERSION},1.0.0,g" -e "s,@TYPEINFO@,????,g" -e "s,\$${QMAKE_PKGINFO_TYPEINFO},????,g" -e "s,@BUNDLEIDENTIFIER@,Nothing.PhoneWindow,g" -e "s,\$${PRODUCT_BUNDLE_IDENTIFIER},Nothing.PhoneWindow,g" -e "s,\$${MACOSX_DEPLOYMENT_TARGET},10.12,g" -e "s,\$${IPHONEOS_DEPLOYMENT_TARGET},,g" -e "s,\$${TVOS_DEPLOYMENT_TARGET},,g" -e "s,\$${WATCHOS_DEPLOYMENT_TARGET},,g" -e "s,@ICON@,,g" -e "s,\$${ASSETCATALOG_COMPILER_APPICON_NAME},,g" -e "s,@EXECUTABLE@,PhoneWindow,g" -e "s,@LIBRARY@,PhoneWindow,g" -e "s,\$${EXECUTABLE_NAME},PhoneWindow,g" -e "s,@TYPEINFO@,????,g" -e "s,\$${QMAKE_PKGINFO_TYPEINFO},????,g" ../../Desktop/QT/5.12.6/clang_64/mkspecs/macx-clang/Info.plist.app >PhoneWindow.app/Contents/Info.plist
 
 all: Makefile \
 		PhoneWindow.app/Contents/PkgInfo \
@@ -695,9 +699,9 @@ dist: distdir FORCE
 distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
-	$(COPY_FILE) --parents ../../../Desktop/QT/5.12.6/clang_64/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents mainwindow.h $(DISTDIR)/
-	$(COPY_FILE) --parents main.cpp mainwindow.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../../Desktop/QT/5.12.6/clang_64/mkspecs/features/data/dummy.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents mainwindow.h myadressbookmodel.h $(DISTDIR)/
+	$(COPY_FILE) --parents main.cpp mainwindow.cpp myadressbookmodel.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents mainwindow.ui $(DISTDIR)/
 
 
@@ -729,18 +733,21 @@ compiler_rcc_clean:
 compiler_moc_predefs_make_all: moc_predefs.h
 compiler_moc_predefs_clean:
 	-$(DEL_FILE) moc_predefs.h
-moc_predefs.h: ../../../Desktop/QT/5.12.6/clang_64/mkspecs/features/data/dummy.cpp
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ -pipe -stdlib=libc++ -g -std=gnu++11 $(EXPORT_ARCH_ARGS) -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -mmacosx-version-min=10.12 -Wall -W -dM -E -o moc_predefs.h ../../../Desktop/QT/5.12.6/clang_64/mkspecs/features/data/dummy.cpp
+moc_predefs.h: ../../Desktop/QT/5.12.6/clang_64/mkspecs/features/data/dummy.cpp
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ -pipe -stdlib=libc++ -g -std=gnu++11 $(EXPORT_ARCH_ARGS) -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -mmacosx-version-min=10.12 -Wall -W -dM -E -o moc_predefs.h ../../Desktop/QT/5.12.6/clang_64/mkspecs/features/data/dummy.cpp
 
 compiler_moc_header_make_all: moc_mainwindow.cpp
 compiler_moc_header_clean:
 	-$(DEL_FILE) moc_mainwindow.cpp
 moc_mainwindow.cpp: mainwindow.h \
-		../../../Desktop/QT/5.12.6/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
-		../../../Desktop/QT/5.12.6/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		../../Desktop/QT/5.12.6/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
+		../../Desktop/QT/5.12.6/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		myadressbookmodel.h \
+		../../Desktop/QT/5.12.6/clang_64/lib/QtCore.framework/Headers/QAbstractTableModel \
+		../../Desktop/QT/5.12.6/clang_64/lib/QtCore.framework/Headers/qabstractitemmodel.h \
 		moc_predefs.h \
-		../../../Desktop/QT/5.12.6/clang_64/bin/moc
-	/Users/zachary/Desktop/QT/5.12.6/clang_64/bin/moc $(DEFINES) --include /Users/zachary/Downloads/Phone-Keenan/PhoneWindow/moc_predefs.h -I/Users/zachary/Desktop/QT/5.12.6/clang_64/mkspecs/macx-clang -I/Users/zachary/Downloads/Phone-Keenan/PhoneWindow -I/Users/zachary/Desktop/QT/5.12.6/clang_64/lib/QtWidgets.framework/Headers -I/Users/zachary/Desktop/QT/5.12.6/clang_64/lib/QtGui.framework/Headers -I/Users/zachary/Desktop/QT/5.12.6/clang_64/lib/QtCore.framework/Headers -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include -F/Users/zachary/Desktop/QT/5.12.6/clang_64/lib mainwindow.h -o moc_mainwindow.cpp
+		../../Desktop/QT/5.12.6/clang_64/bin/moc
+	/Users/zachary/Desktop/QT/5.12.6/clang_64/bin/moc $(DEFINES) --include /Users/zachary/PP/Phone/moc_predefs.h -I/Users/zachary/Desktop/QT/5.12.6/clang_64/mkspecs/macx-clang -I/Users/zachary/PP/Phone -I/Users/zachary/Desktop/QT/5.12.6/clang_64/lib/QtWidgets.framework/Headers -I/Users/zachary/Desktop/QT/5.12.6/clang_64/lib/QtGui.framework/Headers -I/Users/zachary/Desktop/QT/5.12.6/clang_64/lib/QtCore.framework/Headers -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/include -F/Users/zachary/Desktop/QT/5.12.6/clang_64/lib mainwindow.h -o moc_mainwindow.cpp
 
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
@@ -750,7 +757,7 @@ compiler_uic_make_all: ui_mainwindow.h
 compiler_uic_clean:
 	-$(DEL_FILE) ui_mainwindow.h
 ui_mainwindow.h: mainwindow.ui \
-		../../../Desktop/QT/5.12.6/clang_64/bin/uic
+		../../Desktop/QT/5.12.6/clang_64/bin/uic
 	/Users/zachary/Desktop/QT/5.12.6/clang_64/bin/uic mainwindow.ui -o ui_mainwindow.h
 
 compiler_rez_source_make_all:
@@ -766,17 +773,30 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean compiler_ui
 ####### Compile
 
 main.o: main.cpp mainwindow.h \
-		../../../Desktop/QT/5.12.6/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
-		../../../Desktop/QT/5.12.6/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h \
-		../../../Desktop/QT/5.12.6/clang_64/lib/QtWidgets.framework/Headers/QApplication \
-		../../../Desktop/QT/5.12.6/clang_64/lib/QtWidgets.framework/Headers/qapplication.h
+		../../Desktop/QT/5.12.6/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
+		../../Desktop/QT/5.12.6/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		myadressbookmodel.h \
+		../../Desktop/QT/5.12.6/clang_64/lib/QtCore.framework/Headers/QAbstractTableModel \
+		../../Desktop/QT/5.12.6/clang_64/lib/QtCore.framework/Headers/qabstractitemmodel.h \
+		../../Desktop/QT/5.12.6/clang_64/lib/QtWidgets.framework/Headers/QApplication \
+		../../Desktop/QT/5.12.6/clang_64/lib/QtWidgets.framework/Headers/qapplication.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o main.cpp
 
 mainwindow.o: mainwindow.cpp mainwindow.h \
-		../../../Desktop/QT/5.12.6/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
-		../../../Desktop/QT/5.12.6/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h \
-		ui_mainwindow.h
+		../../Desktop/QT/5.12.6/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
+		../../Desktop/QT/5.12.6/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		myadressbookmodel.h \
+		../../Desktop/QT/5.12.6/clang_64/lib/QtCore.framework/Headers/QAbstractTableModel \
+		../../Desktop/QT/5.12.6/clang_64/lib/QtCore.framework/Headers/qabstractitemmodel.h \
+		ui_mainwindow.h \
+		../../Desktop/QT/5.12.6/clang_64/lib/QtWidgets.framework/Headers/QMessageBox \
+		../../Desktop/QT/5.12.6/clang_64/lib/QtWidgets.framework/Headers/qmessagebox.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o mainwindow.cpp
+
+myadressbookmodel.o: myadressbookmodel.cpp myadressbookmodel.h \
+		../../Desktop/QT/5.12.6/clang_64/lib/QtCore.framework/Headers/QAbstractTableModel \
+		../../Desktop/QT/5.12.6/clang_64/lib/QtCore.framework/Headers/qabstractitemmodel.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o myadressbookmodel.o myadressbookmodel.cpp
 
 moc_mainwindow.o: moc_mainwindow.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_mainwindow.o moc_mainwindow.cpp

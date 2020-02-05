@@ -17,10 +17,12 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    myadressbookmodel.cpp
 
 HEADERS += \
-    mainwindow.h
+    mainwindow.h \
+    myadressbookmodel.h
 
 FORMS += \
     mainwindow.ui

@@ -11,15 +11,13 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
-#include <QtWidgets/QGridLayout>
-#include <QtWidgets/QLabel>
+#include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
-#include <QtWidgets/QScrollArea>
 #include <QtWidgets/QStatusBar>
-#include <QtWidgets/QVBoxLayout>
+#include <QtWidgets/QTableView>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -38,47 +36,13 @@ public:
     QPushButton *button3;
     QPushButton *button1;
     QPushButton *callbutton;
-    QScrollArea *scrollArea;
-    QWidget *scrollAreaWidgetContents;
-    QGridLayout *gridLayout;
-    QVBoxLayout *verticalLayout;
-    QLabel *label_3;
-    QLabel *label_4;
-    QLabel *label_13;
-    QLabel *label_9;
-    QLabel *label_11;
-    QLabel *label_10;
-    QLabel *label_20;
-    QLabel *label_17;
-    QLabel *label_23;
-    QLabel *label_30;
-    QLabel *label_29;
-    QLabel *label_31;
-    QLabel *label_24;
-    QLabel *label_25;
-    QLabel *label_26;
-    QLabel *label_27;
-    QLabel *label_28;
-    QLabel *label_18;
-    QLabel *label_14;
-    QLabel *label_21;
-    QLabel *label_15;
-    QLabel *label_16;
-    QLabel *label_19;
-    QLabel *label_22;
-    QLabel *label_12;
-    QLabel *label_8;
-    QLabel *label_7;
-    QLabel *label_6;
-    QLabel *label_5;
-    QLabel *label_2;
     QPushButton *poundbutton;
     QPushButton *button0;
     QPushButton *starbutton;
-    QLabel *label;
     QLineEdit *display;
     QPushButton *Backspace;
     QPushButton *OpenAddressBook;
+    QTableView *tableView;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -86,7 +50,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(731, 535);
+        MainWindow->resize(828, 535);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         button2 = new QPushButton(centralwidget);
@@ -189,171 +153,6 @@ public:
 "	border-radius: 35%;\n"
 "	color:rgb(255, 255, 255);\n"
 "}"));
-        scrollArea = new QScrollArea(centralwidget);
-        scrollArea->setObjectName(QString::fromUtf8("scrollArea"));
-        scrollArea->setGeometry(QRect(390, 90, 251, 361));
-        scrollArea->setWidgetResizable(true);
-        scrollAreaWidgetContents = new QWidget();
-        scrollAreaWidgetContents->setObjectName(QString::fromUtf8("scrollAreaWidgetContents"));
-        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 234, 738));
-        gridLayout = new QGridLayout(scrollAreaWidgetContents);
-        gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
-        verticalLayout = new QVBoxLayout();
-        verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
-        label_3 = new QLabel(scrollAreaWidgetContents);
-        label_3->setObjectName(QString::fromUtf8("label_3"));
-
-        verticalLayout->addWidget(label_3);
-
-        label_4 = new QLabel(scrollAreaWidgetContents);
-        label_4->setObjectName(QString::fromUtf8("label_4"));
-
-        verticalLayout->addWidget(label_4);
-
-        label_13 = new QLabel(scrollAreaWidgetContents);
-        label_13->setObjectName(QString::fromUtf8("label_13"));
-
-        verticalLayout->addWidget(label_13);
-
-        label_9 = new QLabel(scrollAreaWidgetContents);
-        label_9->setObjectName(QString::fromUtf8("label_9"));
-
-        verticalLayout->addWidget(label_9);
-
-        label_11 = new QLabel(scrollAreaWidgetContents);
-        label_11->setObjectName(QString::fromUtf8("label_11"));
-
-        verticalLayout->addWidget(label_11);
-
-        label_10 = new QLabel(scrollAreaWidgetContents);
-        label_10->setObjectName(QString::fromUtf8("label_10"));
-
-        verticalLayout->addWidget(label_10);
-
-        label_20 = new QLabel(scrollAreaWidgetContents);
-        label_20->setObjectName(QString::fromUtf8("label_20"));
-
-        verticalLayout->addWidget(label_20);
-
-        label_17 = new QLabel(scrollAreaWidgetContents);
-        label_17->setObjectName(QString::fromUtf8("label_17"));
-
-        verticalLayout->addWidget(label_17);
-
-        label_23 = new QLabel(scrollAreaWidgetContents);
-        label_23->setObjectName(QString::fromUtf8("label_23"));
-
-        verticalLayout->addWidget(label_23);
-
-        label_30 = new QLabel(scrollAreaWidgetContents);
-        label_30->setObjectName(QString::fromUtf8("label_30"));
-
-        verticalLayout->addWidget(label_30);
-
-        label_29 = new QLabel(scrollAreaWidgetContents);
-        label_29->setObjectName(QString::fromUtf8("label_29"));
-
-        verticalLayout->addWidget(label_29);
-
-        label_31 = new QLabel(scrollAreaWidgetContents);
-        label_31->setObjectName(QString::fromUtf8("label_31"));
-
-        verticalLayout->addWidget(label_31);
-
-        label_24 = new QLabel(scrollAreaWidgetContents);
-        label_24->setObjectName(QString::fromUtf8("label_24"));
-
-        verticalLayout->addWidget(label_24);
-
-        label_25 = new QLabel(scrollAreaWidgetContents);
-        label_25->setObjectName(QString::fromUtf8("label_25"));
-
-        verticalLayout->addWidget(label_25);
-
-        label_26 = new QLabel(scrollAreaWidgetContents);
-        label_26->setObjectName(QString::fromUtf8("label_26"));
-
-        verticalLayout->addWidget(label_26);
-
-        label_27 = new QLabel(scrollAreaWidgetContents);
-        label_27->setObjectName(QString::fromUtf8("label_27"));
-
-        verticalLayout->addWidget(label_27);
-
-        label_28 = new QLabel(scrollAreaWidgetContents);
-        label_28->setObjectName(QString::fromUtf8("label_28"));
-
-        verticalLayout->addWidget(label_28);
-
-        label_18 = new QLabel(scrollAreaWidgetContents);
-        label_18->setObjectName(QString::fromUtf8("label_18"));
-
-        verticalLayout->addWidget(label_18);
-
-        label_14 = new QLabel(scrollAreaWidgetContents);
-        label_14->setObjectName(QString::fromUtf8("label_14"));
-
-        verticalLayout->addWidget(label_14);
-
-        label_21 = new QLabel(scrollAreaWidgetContents);
-        label_21->setObjectName(QString::fromUtf8("label_21"));
-
-        verticalLayout->addWidget(label_21);
-
-        label_15 = new QLabel(scrollAreaWidgetContents);
-        label_15->setObjectName(QString::fromUtf8("label_15"));
-
-        verticalLayout->addWidget(label_15);
-
-        label_16 = new QLabel(scrollAreaWidgetContents);
-        label_16->setObjectName(QString::fromUtf8("label_16"));
-
-        verticalLayout->addWidget(label_16);
-
-        label_19 = new QLabel(scrollAreaWidgetContents);
-        label_19->setObjectName(QString::fromUtf8("label_19"));
-
-        verticalLayout->addWidget(label_19);
-
-        label_22 = new QLabel(scrollAreaWidgetContents);
-        label_22->setObjectName(QString::fromUtf8("label_22"));
-
-        verticalLayout->addWidget(label_22);
-
-        label_12 = new QLabel(scrollAreaWidgetContents);
-        label_12->setObjectName(QString::fromUtf8("label_12"));
-
-        verticalLayout->addWidget(label_12);
-
-        label_8 = new QLabel(scrollAreaWidgetContents);
-        label_8->setObjectName(QString::fromUtf8("label_8"));
-
-        verticalLayout->addWidget(label_8);
-
-        label_7 = new QLabel(scrollAreaWidgetContents);
-        label_7->setObjectName(QString::fromUtf8("label_7"));
-
-        verticalLayout->addWidget(label_7);
-
-        label_6 = new QLabel(scrollAreaWidgetContents);
-        label_6->setObjectName(QString::fromUtf8("label_6"));
-
-        verticalLayout->addWidget(label_6);
-
-        label_5 = new QLabel(scrollAreaWidgetContents);
-        label_5->setObjectName(QString::fromUtf8("label_5"));
-
-        verticalLayout->addWidget(label_5);
-
-        label_2 = new QLabel(scrollAreaWidgetContents);
-        label_2->setObjectName(QString::fromUtf8("label_2"));
-
-        verticalLayout->addWidget(label_2);
-
-
-        gridLayout->addLayout(verticalLayout, 7, 0, 1, 1);
-
-        scrollArea->setWidget(scrollAreaWidgetContents);
         poundbutton = new QPushButton(centralwidget);
         poundbutton->setObjectName(QString::fromUtf8("poundbutton"));
         poundbutton->setGeometry(QRect(270, 310, 70, 70));
@@ -388,9 +187,6 @@ public:
 "	border-radius: 35%;\n"
 "	color:rgb(255, 255, 255);\n"
 "}"));
-        label = new QLabel(centralwidget);
-        label->setObjectName(QString::fromUtf8("label"));
-        label->setGeometry(QRect(390, 70, 250, 21));
         display = new QLineEdit(centralwidget);
         display->setObjectName(QString::fromUtf8("display"));
         display->setGeometry(QRect(120, 29, 181, 31));
@@ -400,11 +196,14 @@ public:
         Backspace->setGeometry(QRect(310, 30, 75, 31));
         OpenAddressBook = new QPushButton(centralwidget);
         OpenAddressBook->setObjectName(QString::fromUtf8("OpenAddressBook"));
-        OpenAddressBook->setGeometry(QRect(54, 420, 111, 31));
+        OpenAddressBook->setGeometry(QRect(50, 420, 111, 31));
+        tableView = new QTableView(centralwidget);
+        tableView->setObjectName(QString::fromUtf8("tableView"));
+        tableView->setGeometry(QRect(440, 30, 371, 431));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 731, 22));
+        menubar->setGeometry(QRect(0, 0, 828, 22));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
@@ -436,40 +235,9 @@ public:
 "D E F", nullptr));
         button1->setText(QApplication::translate("MainWindow", "1", nullptr));
         callbutton->setText(QApplication::translate("MainWindow", "Call", nullptr));
-        label_3->setText(QApplication::translate("MainWindow", "TextLabel", nullptr));
-        label_4->setText(QApplication::translate("MainWindow", "TextLabel", nullptr));
-        label_13->setText(QApplication::translate("MainWindow", "TextLabel", nullptr));
-        label_9->setText(QApplication::translate("MainWindow", "TextLabel", nullptr));
-        label_11->setText(QApplication::translate("MainWindow", "TextLabel", nullptr));
-        label_10->setText(QApplication::translate("MainWindow", "TextLabel", nullptr));
-        label_20->setText(QApplication::translate("MainWindow", "TextLabel", nullptr));
-        label_17->setText(QApplication::translate("MainWindow", "TextLabel", nullptr));
-        label_23->setText(QApplication::translate("MainWindow", "TextLabel", nullptr));
-        label_30->setText(QApplication::translate("MainWindow", "TextLabel", nullptr));
-        label_29->setText(QApplication::translate("MainWindow", "TextLabel", nullptr));
-        label_31->setText(QApplication::translate("MainWindow", "TextLabel", nullptr));
-        label_24->setText(QApplication::translate("MainWindow", "TextLabel", nullptr));
-        label_25->setText(QApplication::translate("MainWindow", "TextLabel", nullptr));
-        label_26->setText(QApplication::translate("MainWindow", "TextLabel", nullptr));
-        label_27->setText(QApplication::translate("MainWindow", "TextLabel", nullptr));
-        label_28->setText(QApplication::translate("MainWindow", "TextLabel", nullptr));
-        label_18->setText(QApplication::translate("MainWindow", "TextLabel", nullptr));
-        label_14->setText(QApplication::translate("MainWindow", "TextLabel", nullptr));
-        label_21->setText(QApplication::translate("MainWindow", "TextLabel", nullptr));
-        label_15->setText(QApplication::translate("MainWindow", "TextLabel", nullptr));
-        label_16->setText(QApplication::translate("MainWindow", "TextLabel", nullptr));
-        label_19->setText(QApplication::translate("MainWindow", "TextLabel", nullptr));
-        label_22->setText(QApplication::translate("MainWindow", "TextLabel", nullptr));
-        label_12->setText(QApplication::translate("MainWindow", "TextLabel", nullptr));
-        label_8->setText(QApplication::translate("MainWindow", "TextLabel", nullptr));
-        label_7->setText(QApplication::translate("MainWindow", "TextLabel", nullptr));
-        label_6->setText(QApplication::translate("MainWindow", "TextLabel", nullptr));
-        label_5->setText(QApplication::translate("MainWindow", "TextLabel", nullptr));
-        label_2->setText(QApplication::translate("MainWindow", "TextLabel", nullptr));
         poundbutton->setText(QApplication::translate("MainWindow", "#", nullptr));
         button0->setText(QApplication::translate("MainWindow", "0", nullptr));
         starbutton->setText(QApplication::translate("MainWindow", "*", nullptr));
-        label->setText(QApplication::translate("MainWindow", "TextLabel", nullptr));
         display->setText(QApplication::translate("MainWindow", "Enter Text ", nullptr));
         Backspace->setText(QApplication::translate("MainWindow", "Delete", nullptr));
         OpenAddressBook->setText(QApplication::translate("MainWindow", "Contact Book", nullptr));

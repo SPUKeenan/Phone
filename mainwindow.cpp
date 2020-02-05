@@ -1,14 +1,18 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "myadressbookmodel.h"
 #include <string>
 #include <iostream>
 #include <QMessageBox>
+#include <QFileDialog>
 
-MainWindow::MainWindow(QWidget *parent)
-    : QMainWindow(parent)
-    , ui(new Ui::MainWindow)
+MainWindow::MainWindow(QWidget *parent):
+    QMainWindow(parent),
+    ui(new Ui::MainWindow),
+    myModel(new MyAdressBookModel(this))
 {
     ui->setupUi(this);
+    ui->tableView ->setModel(myModel);
 }
 
 MainWindow::~MainWindow()
@@ -227,3 +231,19 @@ void MainWindow::on_callbutton_clicked()
 }
 
 
+
+void MainWindow::on_OpenAddressBook_clicked()
+{
+    QString fileName = QFileDialog::getOpenFileName
+            (this, tr("Open Adress Book"), "", tr("Adress Book (*.csv);; Files(*)"));
+    std::cout << fileName.toStdString() << std::endl;
+    myModel->openFile(fileName);
+}
+
+
+void MainWindow::on_tableView_clicked(const QModelIndex &index)
+{
+    ui->display -> setText(myModel -> phoneNumbers[index.row()]);
+    phoneNumber = myModel->phoneNumbers[index.row()];
+
+}
