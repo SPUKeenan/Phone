@@ -190,7 +190,7 @@ public:
         display = new QLineEdit(centralwidget);
         display->setObjectName(QString::fromUtf8("display"));
         display->setGeometry(QRect(120, 29, 181, 31));
-        display->setMaxLength(12);
+        display->setMaxLength(18);
         Backspace = new QPushButton(centralwidget);
         Backspace->setObjectName(QString::fromUtf8("Backspace"));
         Backspace->setGeometry(QRect(310, 30, 75, 31));
