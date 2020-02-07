@@ -222,7 +222,10 @@ QString MainWindow::on_Backspace_clicked()
 void MainWindow::on_callbutton_clicked()
 {
     QMessageBox text;
+    if(phoneNumber.size() <= 12)
     text.setText("Calling: " + phoneNumber);
+    else
+        text.setText("Invalid Phone Number!");
     text.exec();
     phoneNumber = nullptr;
     ui->display->setText(phoneNumber);
@@ -243,7 +246,7 @@ void MainWindow::on_OpenAddressBook_clicked()
 
 void MainWindow::on_tableView_clicked(const QModelIndex &index)
 {
-    ui->display -> setText(myModel -> phoneNumbers[index.row()]);
-    phoneNumber = myModel->phoneNumbers[index.row()];
+    ui->display -> setText(myModel -> contactList[index.row()].phoneNumber);
+    phoneNumber = myModel->contactList[index.row()].phoneNumber;
 
 }

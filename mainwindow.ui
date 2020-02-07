@@ -331,7 +331,7 @@ D E F</string>
      <string>Enter Text </string>
     </property>
     <property name="maxLength">
-     <number>12</number>
+     <number>18</number>
     </property>
    </widget>
    <widget class="QPushButton" name="Backspace">

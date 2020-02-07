@@ -11,7 +11,7 @@ MyAdressBookModel::MyAdressBookModel(QObject *parent)
 
 int MyAdressBookModel::rowCount(const QModelIndex &parent) const
 {
-    return firstNames.size();
+    return contactList.size();
 }
 
 int MyAdressBookModel::columnCount(const QModelIndex &parent) const
@@ -20,17 +20,19 @@ int MyAdressBookModel::columnCount(const QModelIndex &parent) const
 }
 
 QVariant MyAdressBookModel::data(const QModelIndex &index, int role) const
-{
+{user contact;
+
     if(role == Qt::DisplayRole)
     {
+
     switch(index.column())
     {
-        case 0:
-        return firstNames.at(index.row());
-    case 1:
-        return lastNames.at(index.row());
-      case 2:
-        return  phoneNumbers.at(index.row());
+         case 0:
+            return contactList[index.row()].firstName;
+         case 1:
+              return contactList[index.row()].lastName;
+         case 2:
+              return contactList[index.row()].phoneNumber;
     }
     }
     return QVariant();
@@ -40,6 +42,8 @@ QVariant MyAdressBookModel::data(const QModelIndex &index, int role) const
 
 void MyAdressBookModel::openFile(QString filePath)
 {
+    user contact;
+    contactList.push_back(contact);
     QFile file(filePath);
     if(!file.open(QIODevice::ReadOnly)) {
         QMessageBox::information(0, "error", file.errorString());
@@ -48,9 +52,9 @@ void MyAdressBookModel::openFile(QString filePath)
 
     QTextStream in(&file);
 
-    firstNames.clear();
-    lastNames.clear();
-    phoneNumbers.clear();
+    contact.firstName.clear();
+    contact.lastName.clear();
+    contact.phoneNumber.clear();
 
     for (int i = 0; !in.atEnd(); i++)
     {
@@ -64,10 +68,11 @@ void MyAdressBookModel::openFile(QString filePath)
             std::cout << "[" << j << "]" << fields[j].toStdString();
         }
     std::cout << std::endl;
-
-    firstNames.push_back(fields[0]);
-    lastNames.push_back(fields[1]);
-    phoneNumbers.push_back(fields[7]);
+    contact.firstName = fields[0];
+     contact.lastName = fields[1];
+    contact.phoneNumber= fields[7];
+    contactList.push_back(contact);
+   std::cout << "" << std::endl;
 }
     file.close();
     emit layoutChanged();

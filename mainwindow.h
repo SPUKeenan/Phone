@@ -46,9 +46,6 @@ private slots:
 
     void on_OpenAddressBook_clicked();
 
-
-
-
     void on_tableView_clicked(const QModelIndex &index);
 
 private:
