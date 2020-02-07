@@ -16,9 +16,14 @@ public:
     QVariant data(const QModelIndex &index, int role) const;
     void openFile(QString filePath);
     QString getPhoneNumber(int index);
-    std::vector<QString> firstNames;
-    std::vector<QString> lastNames;
-    std::vector<QString> phoneNumbers;
+
+    struct user{
+        QString firstName;
+        QString lastName;
+        QString phoneNumber;
+    };
+    std::vector<user> contactList;
+
 };
 
 #endif // MYADRESSBOOKMODEL_H
