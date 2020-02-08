@@ -1,26 +1,26 @@
-#include "myadressbookmodel.h"
+#include "myaddressbookmodel.h"
 #include <QFile>
 #include <QMessageBox>
 #include <QTextStream>
 #include <iostream>
-MyAdressBookModel::MyAdressBookModel(QObject *parent)
+MyAddressBookModel::MyAddressBookModel(QObject *parent)
     :QAbstractTableModel (parent)
 {
 
 }
 
-int MyAdressBookModel::rowCount(const QModelIndex &parent) const
+int MyAddressBookModel::rowCount(const QModelIndex &parent) const
 {
     return contactList.size();
 }
 
-int MyAdressBookModel::columnCount(const QModelIndex &parent) const
+int MyAddressBookModel::columnCount(const QModelIndex &parent) const
 {
     return 3;
 }
 
-QVariant MyAdressBookModel::data(const QModelIndex &index, int role) const
-{user contact;
+QVariant MyAddressBookModel::data(const QModelIndex &index, int role) const
+{Person contact;
 
     if(role == Qt::DisplayRole)
     {
@@ -40,9 +40,9 @@ QVariant MyAdressBookModel::data(const QModelIndex &index, int role) const
 
 
 
-void MyAdressBookModel::openFile(QString filePath)
+void MyAddressBookModel::openFile(QString filePath)
 {
-    user contact;
+    Person contact;
     contactList.push_back(contact);
     QFile file(filePath);
     if(!file.open(QIODevice::ReadOnly)) {
@@ -77,6 +77,7 @@ void MyAdressBookModel::openFile(QString filePath)
     file.close();
     emit layoutChanged();
 }
+
 
 
 

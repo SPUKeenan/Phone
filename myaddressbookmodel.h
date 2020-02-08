@@ -4,10 +4,10 @@
 #include <QAbstractTableModel>
 
 
-class MyAdressBookModel: public QAbstractTableModel
+class MyAddressBookModel: public QAbstractTableModel
 {
 public:
-    MyAdressBookModel(QObject *parent);
+    MyAddressBookModel(QObject *parent);
 
     // QAbstractItemModel interface
 public:
@@ -16,13 +16,15 @@ public:
     QVariant data(const QModelIndex &index, int role) const;
     void openFile(QString filePath);
     QString getPhoneNumber(int index);
+    QString convertNameToNumbers(QString name);
+    int convertCharToNum(char letter);
 
-    struct user{
+    struct Person{
         QString firstName;
         QString lastName;
         QString phoneNumber;
     };
-    std::vector<user> contactList;
+    std::vector<Person> contactList;
 
 };
 
