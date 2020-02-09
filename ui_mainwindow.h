@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
-** Created by: Qt User Interface Compiler version 5.12.6
+** Created by: Qt User Interface Compiler version 5.14.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -190,7 +190,7 @@ public:
         display = new QLineEdit(centralwidget);
         display->setObjectName(QString::fromUtf8("display"));
         display->setGeometry(QRect(120, 29, 181, 31));
-        display->setMaxLength(12);
+        display->setMaxLength(18);
         Backspace = new QPushButton(centralwidget);
         Backspace->setObjectName(QString::fromUtf8("Backspace"));
         Backspace->setGeometry(QRect(310, 30, 75, 31));
@@ -216,31 +216,31 @@ public:
 
     void retranslateUi(QMainWindow *MainWindow)
     {
-        MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", nullptr));
-        button2->setText(QApplication::translate("MainWindow", "2\n"
+        MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
+        button2->setText(QCoreApplication::translate("MainWindow", "2\n"
 "A B C", nullptr));
-        button9->setText(QApplication::translate("MainWindow", "9\n"
+        button9->setText(QCoreApplication::translate("MainWindow", "9\n"
 "W X Y Z", nullptr));
-        button8->setText(QApplication::translate("MainWindow", "8\n"
+        button8->setText(QCoreApplication::translate("MainWindow", "8\n"
 "T U V", nullptr));
-        button7->setText(QApplication::translate("MainWindow", "7\n"
+        button7->setText(QCoreApplication::translate("MainWindow", "7\n"
 "P Q R S", nullptr));
-        button6->setText(QApplication::translate("MainWindow", "6\n"
+        button6->setText(QCoreApplication::translate("MainWindow", "6\n"
 "M N O", nullptr));
-        button5->setText(QApplication::translate("MainWindow", "5\n"
+        button5->setText(QCoreApplication::translate("MainWindow", "5\n"
 "J K L", nullptr));
-        button4->setText(QApplication::translate("MainWindow", "4\n"
+        button4->setText(QCoreApplication::translate("MainWindow", "4\n"
 "G H I", nullptr));
-        button3->setText(QApplication::translate("MainWindow", "3\n"
+        button3->setText(QCoreApplication::translate("MainWindow", "3\n"
 "D E F", nullptr));
-        button1->setText(QApplication::translate("MainWindow", "1", nullptr));
-        callbutton->setText(QApplication::translate("MainWindow", "Call", nullptr));
-        poundbutton->setText(QApplication::translate("MainWindow", "#", nullptr));
-        button0->setText(QApplication::translate("MainWindow", "0", nullptr));
-        starbutton->setText(QApplication::translate("MainWindow", "*", nullptr));
-        display->setText(QApplication::translate("MainWindow", "Enter Text ", nullptr));
-        Backspace->setText(QApplication::translate("MainWindow", "Delete", nullptr));
-        OpenAddressBook->setText(QApplication::translate("MainWindow", "Contact Book", nullptr));
+        button1->setText(QCoreApplication::translate("MainWindow", "1", nullptr));
+        callbutton->setText(QCoreApplication::translate("MainWindow", "Call", nullptr));
+        poundbutton->setText(QCoreApplication::translate("MainWindow", "#", nullptr));
+        button0->setText(QCoreApplication::translate("MainWindow", "0", nullptr));
+        starbutton->setText(QCoreApplication::translate("MainWindow", "*", nullptr));
+        display->setText(QCoreApplication::translate("MainWindow", "Enter Text ", nullptr));
+        Backspace->setText(QCoreApplication::translate("MainWindow", "Delete", nullptr));
+        OpenAddressBook->setText(QCoreApplication::translate("MainWindow", "Contact Book", nullptr));
     } // retranslateUi
 
 };
