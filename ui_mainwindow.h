@@ -222,7 +222,7 @@ public:
 "}"));
         OpenAddressBook = new QPushButton(centralwidget);
         OpenAddressBook->setObjectName(QString::fromUtf8("OpenAddressBook"));
-        OpenAddressBook->setGeometry(QRect(220, 420, 70, 31));
+        OpenAddressBook->setGeometry(QRect(220, 420, 111, 31));
         OpenAddressBook->setStyleSheet(QString::fromUtf8("QPushButton\n"
 "{\n"
 "	background-color: rgb(50, 50, 50);\n"
@@ -272,14 +272,16 @@ public:
 "G H I", nullptr));
         button3->setText(QCoreApplication::translate("MainWindow", "3\n"
 "D E F", nullptr));
-        button1->setText(QCoreApplication::translate("MainWindow", "1", nullptr));
+        button1->setText(QCoreApplication::translate("MainWindow", "1\n"
+"", nullptr));
         callbutton->setText(QString());
         poundbutton->setText(QCoreApplication::translate("MainWindow", "#", nullptr));
-        button0->setText(QCoreApplication::translate("MainWindow", "0", nullptr));
+        button0->setText(QCoreApplication::translate("MainWindow", "0\n"
+"", nullptr));
         starbutton->setText(QCoreApplication::translate("MainWindow", "*", nullptr));
         display->setText(QString());
         Backspace->setText(QCoreApplication::translate("MainWindow", "X", nullptr));
-        OpenAddressBook->setText(QCoreApplication::translate("MainWindow", "Contact Book", nullptr));
+        OpenAddressBook->setText(QCoreApplication::translate("MainWindow", "Import Contact Book", nullptr));
     } // retranslateUi
 
 };
