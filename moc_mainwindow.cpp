@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_MainWindow_t {
-    QByteArrayData data[27];
-    char stringdata0[471];
+    QByteArrayData data[29];
+    char stringdata0[494];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -55,10 +55,12 @@ QT_MOC_LITERAL(19, 350, 5), // "index"
 QT_MOC_LITERAL(20, 356, 12), // "lookPersonUp"
 QT_MOC_LITERAL(21, 369, 39), // "std::vector<MyAddressBookMode..."
 QT_MOC_LITERAL(22, 409, 11), // "phoneNumber"
-QT_MOC_LITERAL(23, 421, 20), // "convertNameToNumbers"
-QT_MOC_LITERAL(24, 442, 4), // "name"
-QT_MOC_LITERAL(25, 447, 16), // "convertCharToNum"
-QT_MOC_LITERAL(26, 464, 6) // "letter"
+QT_MOC_LITERAL(23, 421, 17), // "updateContactList"
+QT_MOC_LITERAL(24, 439, 4), // "list"
+QT_MOC_LITERAL(25, 444, 20), // "convertNameToNumbers"
+QT_MOC_LITERAL(26, 465, 4), // "name"
+QT_MOC_LITERAL(27, 470, 16), // "convertCharToNum"
+QT_MOC_LITERAL(28, 487, 6) // "letter"
 
     },
     "MainWindow\0on_button1_clicked\0\0"
@@ -71,8 +73,9 @@ QT_MOC_LITERAL(26, 464, 6) // "letter"
     "on_callbutton_clicked\0on_OpenAddressBook_clicked\0"
     "on_tableView_clicked\0QModelIndex\0index\0"
     "lookPersonUp\0std::vector<MyAddressBookModel::Person>\0"
-    "phoneNumber\0convertNameToNumbers\0name\0"
-    "convertCharToNum\0letter"
+    "phoneNumber\0updateContactList\0list\0"
+    "convertNameToNumbers\0name\0convertCharToNum\0"
+    "letter"
 };
 #undef QT_MOC_LITERAL
 
@@ -82,7 +85,7 @@ static const uint qt_meta_data_MainWindow[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-      19,   14, // methods
+      20,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -90,25 +93,26 @@ static const uint qt_meta_data_MainWindow[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,  109,    2, 0x08 /* Private */,
-       3,    0,  110,    2, 0x08 /* Private */,
-       4,    0,  111,    2, 0x08 /* Private */,
-       5,    0,  112,    2, 0x08 /* Private */,
-       6,    0,  113,    2, 0x08 /* Private */,
-       7,    0,  114,    2, 0x08 /* Private */,
-       8,    0,  115,    2, 0x08 /* Private */,
-       9,    0,  116,    2, 0x08 /* Private */,
-      10,    0,  117,    2, 0x08 /* Private */,
-      11,    0,  118,    2, 0x08 /* Private */,
-      12,    0,  119,    2, 0x08 /* Private */,
-      13,    0,  120,    2, 0x08 /* Private */,
-      14,    0,  121,    2, 0x08 /* Private */,
-      15,    0,  122,    2, 0x08 /* Private */,
-      16,    0,  123,    2, 0x08 /* Private */,
-      17,    1,  124,    2, 0x08 /* Private */,
-      20,    1,  127,    2, 0x08 /* Private */,
-      23,    1,  130,    2, 0x08 /* Private */,
-      25,    1,  133,    2, 0x08 /* Private */,
+       1,    0,  114,    2, 0x08 /* Private */,
+       3,    0,  115,    2, 0x08 /* Private */,
+       4,    0,  116,    2, 0x08 /* Private */,
+       5,    0,  117,    2, 0x08 /* Private */,
+       6,    0,  118,    2, 0x08 /* Private */,
+       7,    0,  119,    2, 0x08 /* Private */,
+       8,    0,  120,    2, 0x08 /* Private */,
+       9,    0,  121,    2, 0x08 /* Private */,
+      10,    0,  122,    2, 0x08 /* Private */,
+      11,    0,  123,    2, 0x08 /* Private */,
+      12,    0,  124,    2, 0x08 /* Private */,
+      13,    0,  125,    2, 0x08 /* Private */,
+      14,    0,  126,    2, 0x08 /* Private */,
+      15,    0,  127,    2, 0x08 /* Private */,
+      16,    0,  128,    2, 0x08 /* Private */,
+      17,    1,  129,    2, 0x08 /* Private */,
+      20,    1,  132,    2, 0x08 /* Private */,
+      23,    1,  135,    2, 0x08 /* Private */,
+      25,    1,  138,    2, 0x08 /* Private */,
+      27,    1,  141,    2, 0x08 /* Private */,
 
  // slots: parameters
     QMetaType::QString,
@@ -128,8 +132,9 @@ static const uint qt_meta_data_MainWindow[] = {
     QMetaType::Void,
     QMetaType::Void, 0x80000000 | 18,   19,
     0x80000000 | 21, QMetaType::QString,   22,
-    QMetaType::QString, QMetaType::QString,   24,
-    QMetaType::Int, QMetaType::Char,   26,
+    QMetaType::Void, 0x80000000 | 21,   24,
+    QMetaType::QString, QMetaType::QString,   26,
+    QMetaType::Int, QMetaType::Char,   28,
 
        0        // eod
 };
@@ -169,12 +174,13 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 13: _t->on_callbutton_clicked(); break;
         case 14: _t->on_OpenAddressBook_clicked(); break;
         case 15: _t->on_tableView_clicked((*reinterpret_cast< const QModelIndex(*)>(_a[1]))); break;
-        case 16: { std::vector<MyAddressBookModel::Person> _r = _t->lookPersonUp((*reinterpret_cast< QString(*)>(_a[1])));
-            if (_a[0]) *reinterpret_cast< std::vector<MyAddressBookModel::Person>*>(_a[0]) = std::move(_r); }  break;
-        case 17: { QString _r = _t->convertNameToNumbers((*reinterpret_cast< QString(*)>(_a[1])));
-            if (_a[0]) *reinterpret_cast< QString*>(_a[0]) = std::move(_r); }  break;
-        case 18: { int _r = _t->convertCharToNum((*reinterpret_cast< char(*)>(_a[1])));
-            if (_a[0]) *reinterpret_cast< int*>(_a[0]) = std::move(_r); }  break;
+        //case 16: { std::vector<MyAddressBookModel::Person> _r = _t->lookPersonUp((*reinterpret_cast< QString(*)>(_a[1])));
+        //    if (_a[0]) *reinterpret_cast< std::vector<MyAddressBookModel::Person>*>(_a[0]) = std::move(_r); }  break;
+        //case 17: _t->updateContactList((*reinterpret_cast< std::vector<MyAddressBookModel::Person>(*)>(_a[1]))); break;
+        //case 18: { QString _r = _t->convertNameToNumbers((*reinterpret_cast< QString(*)>(_a[1])));
+          //  if (_a[0]) *reinterpret_cast< QString*>(_a[0]) = std::move(_r); }  break;
+        //case 19: { int _r = _t->convertCharToNum((*reinterpret_cast< char(*)>(_a[1])));
+          //  if (_a[0]) *reinterpret_cast< int*>(_a[0]) = std::move(_r); }  break;
         default: ;
         }
     }
@@ -209,13 +215,13 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 19)
+        if (_id < 20)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 19;
+        _id -= 20;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 19)
+        if (_id < 20)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 19;
+        _id -= 20;
     }
     return _id;
 }
