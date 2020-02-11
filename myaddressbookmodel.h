@@ -17,7 +17,7 @@ public:
     void openFile(QString filePath);
     QString getPhoneNumber(int index);
     QString convertNameToNumbers(QString name);
-    int convertCharToNum(char letter);
+    QString convertCharToNum(char letter);
     void setFilterString(QString fStr);
 
     struct Person{

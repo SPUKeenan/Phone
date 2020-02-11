@@ -28,11 +28,11 @@ QVariant MyAddressBookModel::data(const QModelIndex &index, int role) const
     switch(index.column())
     {
          case 0:
-            return contactList.at(/*filteredIndex[*/index.row()).firstName;
+            return contactList.at(filteredIndex[index.row()]).firstName;
          case 1:
-              return contactList.at(/*filteredIndex[*/index.row()).lastName;
+              return contactList.at(filteredIndex[index.row()]).lastName;
          case 2:
-              return contactList.at(/*filteredIndex[*/index.row()).phoneNumber;
+              return contactList.at(filteredIndex[index.row()]).phoneNumber;
     }
     }
     return QVariant();
@@ -69,7 +69,7 @@ void MyAddressBookModel::openFile(QString filePath)
         std::cout << std::endl;
         contact.firstName = fields[0];
         contact.lastName = fields[1];
-        contact.phoneNumber= fields[7];
+        contact.phoneNumber = fields[7];
         contactList.push_back(contact);
         filteredIndex.push_back(i);
         std::cout << "" << std::endl;
@@ -81,97 +81,95 @@ void MyAddressBookModel::openFile(QString filePath)
 void MyAddressBookModel::setFilterString(QString fStr)
 {
     filteredIndex.clear();
-    //Check if
+
     for (unsigned long long i =0; i < contactList.size(); i++){
         MyAddressBookModel::Person user = contactList.at(i);
+        QString numWithoutDash = fStr;
+        numWithoutDash.replace('-', "");
+
         if(user.phoneNumber.startsWith(fStr)){
             filteredIndex.push_back(i);
             continue;
-        }
-        fStr = fStr.remove('-');
-
-        if(convertNameToNumbers(user.lastName).startsWith(fStr)){
+        }  if(convertNameToNumbers(user.firstName).startsWith(numWithoutDash)){
             filteredIndex.push_back(i);
             continue;
-        }
-
-        if(convertNameToNumbers(user.firstName).startsWith(fStr)){
+        }  if(convertNameToNumbers(user.lastName).startsWith(numWithoutDash)){
             filteredIndex.push_back(i);
             continue;
         }
     }
-
     emit layoutChanged();
+
 }
 
 
 QString MyAddressBookModel::convertNameToNumbers(QString name)
 {
-    QString nameInNumbers;
+    QString nameInNumbers = "";
     for(int i = 0; i < name.size(); i++){
         nameInNumbers.append(convertCharToNum(name.at(i).toLatin1()));
     }
     return nameInNumbers;
+
 }
 
-int MyAddressBookModel::convertCharToNum(char letter)
+QString MyAddressBookModel::convertCharToNum(char letter)
 {
-    switch (tolower(letter)){
-    case 'a':
-        return 2;
-    case 'b':
-        return 2;
-    case 'c':
-        return 2;
-    case 'd':
-        return 3;
-    case 'e':
-        return 3;
-    case 'f':
-        return 3;
-    case 'g':
-        return 4;
-    case 'h':
-        return 4;
-    case 'i':
-        return 4;
-    case 'j':
-        return 5;
-    case 'k':
-        return 5;
-    case 'l':
-        return 5;
-    case 'm':
-        return 6;
-    case 'n':
-        return 6;
-    case 'o':
-        return 6;
-    case 'p':
-        return 7;
-    case 'q':
-        return 7;
-    case 'r':
-        return 7;
-    case 's':
-        return 7;
-    case 't':
-        return 8;
-    case 'u':
-        return 8;
-    case 'v':
-        return 8;
-    case 'w':
-        return 9;
-    case 'x':
-        return 9;
-    case 'y':
-        return 9;
-    case 'z':
-        return 9;
-    default:
-        return 0;
-    }
+    letter = tolower(letter);
+    if(letter == QChar( 'a'))
+        return "2";
+    if(letter == QChar( 'b'))
+        return "2";
+    if(letter == QChar( 'c'))
+        return "2";
+    if(letter == QChar( 'd'))
+        return "3";
+    if(letter == QChar( 'e'))
+        return "3";
+    if(letter == QChar( 'f'))
+        return "3";
+    if(letter == QChar( 'g'))
+        return "4";
+    if(letter == QChar( 'h'))
+        return "4";
+    if(letter == QChar( 'i'))
+        return "4";
+    if(letter == QChar( 'j'))
+        return "5";
+    if(letter == QChar( 'k'))
+        return "5";
+    if(letter == QChar( 'l'))
+        return "5";
+    if(letter == QChar( 'm'))
+        return "6";
+    if(letter == QChar( 'n'))
+        return "6";
+    if(letter == QChar( 'o'))
+        return "6";
+    if(letter == QChar( 'p'))
+        return "7";
+    if(letter == QChar( 'q'))
+        return "7";
+    if(letter == QChar( 'r'))
+        return "7";
+    if(letter == QChar( 's'))
+        return "7";
+    if(letter == QChar( 't'))
+        return "8";
+    if(letter == QChar( 'u'))
+        return "8";
+    if(letter == QChar( 'v'))
+        return "8";
+    if(letter == QChar( 'w'))
+        return "9";
+    if(letter == QChar( 'x'))
+        return "9";
+    if(letter == QChar( 'y'))
+        return "9";
+    if(letter == QChar( 'z'))
+        return "9";
+
+    return nullptr;
 }
 
 
