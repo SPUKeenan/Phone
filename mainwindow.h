@@ -44,13 +44,11 @@ private slots:
 
     void on_callbutton_clicked();
 
-    void on_OpenAddressBook_clicked();
-
     void on_tableView_clicked(const QModelIndex &index);
 
-    std::vector<MyAddressBookModel::Person> lookPersonUp(QString phoneNumber);
-    QString convertNameToNumbers(QString name);
-    int convertCharToNum(char letter);
+    void on_actionImport_Contacts_List_triggered();
+
+    void on_actionExit_triggered();
 
 private:
       QString phoneNumber;

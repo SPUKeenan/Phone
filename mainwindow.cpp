@@ -34,6 +34,8 @@ QString MainWindow::on_button1_clicked()
         phoneNumber+= "1";
           ui->display->setText(phoneNumber);
    }
+   myModel->setFilterString(phoneNumber);
+
    return phoneNumber;
 }
 
@@ -52,6 +54,8 @@ QString MainWindow::on_button2_clicked()
          phoneNumber+= "2";
            ui->display->setText(phoneNumber);
     }
+    myModel->setFilterString(phoneNumber);
+
     return phoneNumber;
 }
 
@@ -67,6 +71,8 @@ QString MainWindow::on_button3_clicked()
          phoneNumber+= "3";
            ui->display->setText(phoneNumber);
     }
+    myModel->setFilterString(phoneNumber);
+
     return phoneNumber;
 }
 
@@ -83,6 +89,8 @@ QString MainWindow::on_button4_clicked()
          phoneNumber+= "4";
            ui->display->setText(phoneNumber);
     }
+    myModel->setFilterString(phoneNumber);
+
     return phoneNumber;
 }
 
@@ -99,6 +107,8 @@ QString MainWindow::on_button5_clicked()
          phoneNumber+= "5";
            ui->display->setText(phoneNumber);
     }
+    myModel->setFilterString(phoneNumber);
+
     return phoneNumber;
 }
 
@@ -114,6 +124,8 @@ QString MainWindow::on_button6_clicked()
          phoneNumber+= "6";
            ui->display->setText(phoneNumber);
     }
+    myModel->setFilterString(phoneNumber);
+
     return phoneNumber;
 }
 
@@ -130,6 +142,8 @@ QString MainWindow::on_button7_clicked()
          phoneNumber+= "7";
            ui->display->setText(phoneNumber);
     }
+    myModel->setFilterString(phoneNumber);
+
     return phoneNumber;
 }
 
@@ -145,6 +159,8 @@ QString MainWindow::on_button8_clicked()
          phoneNumber+= "8";
            ui->display->setText(phoneNumber);
     }
+    myModel->setFilterString(phoneNumber);
+
     return phoneNumber;
 }
 
@@ -160,6 +176,8 @@ QString MainWindow::on_button9_clicked()
          phoneNumber+= "9";
            ui->display->setText(phoneNumber);
     }
+    myModel->setFilterString(phoneNumber);
+
     return phoneNumber;
 }
 
@@ -191,6 +209,8 @@ QString MainWindow::on_button0_clicked()
          phoneNumber+= "0";
            ui->display->setText(phoneNumber);
     }
+    myModel->setFilterString(phoneNumber);
+
     return phoneNumber;
 }
 
@@ -216,6 +236,8 @@ QString MainWindow::on_Backspace_clicked()
         phoneNumber.remove(phoneNumber.size()-1, 1);
         ui->display->setText(phoneNumber);
     }
+    myModel->setFilterString(phoneNumber);
+
     return phoneNumber;
 }
 
@@ -233,121 +255,22 @@ void MainWindow::on_callbutton_clicked()
 
 }
 
-std::vector<MyAddressBookModel::Person> MainWindow::lookPersonUp(QString phoneNumber)
+void MainWindow::on_tableView_clicked(const QModelIndex &index)
 {
-    std::vector<MyAddressBookModel::Person> returnList;
-    //auto iteratorPerson = std::find(myModel->contactList.begin()->phoneNumber, myModel->contactList.end()->phoneNumber, searchQuery);
-    //auto iteratorFirstName = std::find(convertNameToNumbers(myModel->contactList.begin()->firstName), convertNameToNumbers(myModel->contactList.end()->firstName), searchQuery);
-    //auto iteratorLastName = std::find(convertNameToNumbers(myModel->contactList.begin()->lastName), convertNameToNumbers(myModel->contactList.end()->lastName), searchQuery);
+    ui->display -> setText(myModel -> contactList[index.row()].phoneNumber);
+    phoneNumber = myModel->contactList[index.row()].phoneNumber;
 
-
-
-    /*if(iteratorPerson != myModel->contactList.end()){
-        return *iteratorPerson;
-    }*/
-
-    for(unsigned long long i = 0; i < myModel->contactList.size(); i++){
-        MyAddressBookModel::Person user = myModel->contactList.at(i);
-        if(user.phoneNumber.contains(phoneNumber)){
-            returnList.push_back(user);
-            continue;
-        }
-
-        if(convertNameToNumbers(user.lastName).contains(phoneNumber)){
-            returnList.push_back(user);
-            continue;
-        }
-
-        if(convertNameToNumbers(user.firstName).contains(phoneNumber)){
-            returnList.push_back(user);
-            continue;
-        }
-    }
-
-    return returnList;
 }
 
-QString MainWindow::convertNameToNumbers(QString name)
-{
-    QString nameInNumbers;
-    for(int i = 0; i < name.size(); i++){
-        nameInNumbers.append(convertCharToNum(name.at(i).toLatin1()));
-    }
-    return nameInNumbers;
-}
+void MainWindow::on_actionImport_Contacts_List_triggered(){
 
-int MainWindow::convertCharToNum(char letter)
-{
-    switch (tolower(letter)){
-    case 'a':
-        return 2;
-    case 'b':
-        return 2;
-    case 'c':
-        return 2;
-    case 'd':
-        return 3;
-    case 'e':
-        return 3;
-    case 'f':
-        return 3;
-    case 'g':
-        return 4;
-    case 'h':
-        return 4;
-    case 'i':
-        return 4;
-    case 'j':
-        return 5;
-    case 'k':
-        return 5;
-    case 'l':
-        return 5;
-    case 'm':
-        return 6;
-    case 'n':
-        return 6;
-    case 'o':
-        return 6;
-    case 'p':
-        return 7;
-    case 'q':
-        return 7;
-    case 'r':
-        return 7;
-    case 's':
-        return 7;
-    case 't':
-        return 8;
-    case 'u':
-        return 8;
-    case 'v':
-        return 8;
-    case 'w':
-        return 9;
-    case 'x':
-        return 9;
-    case 'y':
-        return 9;
-    case 'z':
-        return 9;
-    default:
-        return 0;
-    }
-}
-
-void MainWindow::on_OpenAddressBook_clicked()
-{
     QString fileName = QFileDialog::getOpenFileName
             (this, tr("Open Adress Book"), "", tr("Adress Book (*.csv);; Files(*)"));
     std::cout << fileName.toStdString() << std::endl;
     myModel->openFile(fileName);
 }
 
+void MainWindow::on_actionExit_triggered(){
 
-void MainWindow::on_tableView_clicked(const QModelIndex &index)
-{
-    ui->display -> setText(myModel -> contactList[index.row()].phoneNumber);
-    phoneNumber = myModel->contactList[index.row()].phoneNumber;
-
+    exit(1);
 }
