@@ -44,10 +44,11 @@ private slots:
 
     void on_callbutton_clicked();
 
-    void on_OpenAddressBook_clicked();
-
     void on_tableView_clicked(const QModelIndex &index);
 
+    void on_actionImport_Contacts_List_triggered();
+
+    void on_actionExit_triggered();
 
 private:
       QString phoneNumber;

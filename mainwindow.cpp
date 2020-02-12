@@ -255,18 +255,22 @@ void MainWindow::on_callbutton_clicked()
 
 }
 
-void MainWindow::on_OpenAddressBook_clicked()
+void MainWindow::on_tableView_clicked(const QModelIndex &index)
 {
+    ui->display -> setText(myModel -> contactList[index.row()].phoneNumber);
+    phoneNumber = myModel->contactList[index.row()].phoneNumber;
+
+}
+
+void MainWindow::on_actionImport_Contacts_List_triggered(){
+
     QString fileName = QFileDialog::getOpenFileName
             (this, tr("Open Adress Book"), "", tr("Adress Book (*.csv);; Files(*)"));
     std::cout << fileName.toStdString() << std::endl;
     myModel->openFile(fileName);
 }
 
+void MainWindow::on_actionExit_triggered(){
 
-void MainWindow::on_tableView_clicked(const QModelIndex &index)
-{
-    ui->display -> setText(myModel -> contactList[index.row()].phoneNumber);
-    phoneNumber = myModel->contactList[index.row()].phoneNumber;
-
+    exit(1);
 }
