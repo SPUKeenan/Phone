@@ -45,7 +45,6 @@ public:
     QPushButton *starbutton;
     QLineEdit *display;
     QPushButton *Backspace;
-    QPushButton *OpenAddressBook;
     QTableView *tableView;
     QMenuBar *menubar;
     QMenu *menuTools;
@@ -69,6 +68,7 @@ public:
         button2->setObjectName(QString::fromUtf8("button2"));
         button2->setGeometry(QRect(130, 70, 70, 70));
         QFont font;
+        font.setFamily(QString::fromUtf8("icon-ui"));
         font.setPointSize(10);
         button2->setFont(font);
         button2->setStyleSheet(QString::fromUtf8("QPushButton\n"
@@ -181,6 +181,7 @@ public:
         poundbutton->setObjectName(QString::fromUtf8("poundbutton"));
         poundbutton->setGeometry(QRect(220, 310, 70, 70));
         QFont font1;
+        font1.setFamily(QString::fromUtf8("icon-ui"));
         font1.setPointSize(15);
         poundbutton->setFont(font1);
         poundbutton->setStyleSheet(QString::fromUtf8("QPushButton\n"
@@ -217,7 +218,7 @@ public:
         display->setGeometry(QRect(40, 20, 210, 31));
         display->setFont(font);
         display->setStyleSheet(QString::fromUtf8("\n"
-"\n"
+"background-color:rgb(50, 50, 50);\n"
 "	color:rgb(255, 255, 255);\n"
 ""));
         display->setMaxLength(18);
@@ -229,17 +230,12 @@ public:
 "	background-color: rgb(50, 50, 50);\n"
 "	color:rgb(255, 255, 255);\n"
 "}"));
-        OpenAddressBook = new QPushButton(centralwidget);
-        OpenAddressBook->setObjectName(QString::fromUtf8("OpenAddressBook"));
-        OpenAddressBook->setGeometry(QRect(220, 420, 111, 31));
-        OpenAddressBook->setStyleSheet(QString::fromUtf8("QPushButton\n"
-"{\n"
-"	background-color: rgb(50, 50, 50);\n"
-"	color:rgb(255, 255, 255);\n"
-"}"));
         tableView = new QTableView(centralwidget);
         tableView->setObjectName(QString::fromUtf8("tableView"));
         tableView->setGeometry(QRect(350, 20, 320, 450));
+        QFont font2;
+        font2.setFamily(QString::fromUtf8("icon-ui"));
+        tableView->setFont(font2);
         tableView->setStyleSheet(QString::fromUtf8("QTableView\n"
 "{\n"
 "	background-color: rgb(50, 50, 50);\n"
@@ -252,82 +248,6 @@ public:
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
         menubar->setGeometry(QRect(0, 0, 712, 24));
-        QPalette palette;
-        QBrush brush(QColor(0, 0, 0, 255));
-        brush.setStyle(Qt::SolidPattern);
-        palette.setBrush(QPalette::Active, QPalette::WindowText, brush);
-        QBrush brush1(QColor(170, 0, 0, 255));
-        brush1.setStyle(Qt::SolidPattern);
-        palette.setBrush(QPalette::Active, QPalette::Button, brush1);
-        QBrush brush2(QColor(255, 0, 0, 255));
-        brush2.setStyle(Qt::SolidPattern);
-        palette.setBrush(QPalette::Active, QPalette::Light, brush2);
-        QBrush brush3(QColor(212, 0, 0, 255));
-        brush3.setStyle(Qt::SolidPattern);
-        palette.setBrush(QPalette::Active, QPalette::Midlight, brush3);
-        QBrush brush4(QColor(85, 0, 0, 255));
-        brush4.setStyle(Qt::SolidPattern);
-        palette.setBrush(QPalette::Active, QPalette::Dark, brush4);
-        QBrush brush5(QColor(113, 0, 0, 255));
-        brush5.setStyle(Qt::SolidPattern);
-        palette.setBrush(QPalette::Active, QPalette::Mid, brush5);
-        palette.setBrush(QPalette::Active, QPalette::Text, brush);
-        QBrush brush6(QColor(255, 255, 255, 255));
-        brush6.setStyle(Qt::SolidPattern);
-        palette.setBrush(QPalette::Active, QPalette::BrightText, brush6);
-        palette.setBrush(QPalette::Active, QPalette::ButtonText, brush);
-        palette.setBrush(QPalette::Active, QPalette::Base, brush6);
-        palette.setBrush(QPalette::Active, QPalette::Window, brush1);
-        palette.setBrush(QPalette::Active, QPalette::Shadow, brush);
-        QBrush brush7(QColor(212, 127, 127, 255));
-        brush7.setStyle(Qt::SolidPattern);
-        palette.setBrush(QPalette::Active, QPalette::AlternateBase, brush7);
-        QBrush brush8(QColor(255, 255, 220, 255));
-        brush8.setStyle(Qt::SolidPattern);
-        palette.setBrush(QPalette::Active, QPalette::ToolTipBase, brush8);
-        palette.setBrush(QPalette::Active, QPalette::ToolTipText, brush);
-        QBrush brush9(QColor(0, 0, 0, 128));
-        brush9.setStyle(Qt::SolidPattern);
-#if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
-        palette.setBrush(QPalette::Active, QPalette::PlaceholderText, brush9);
-#endif
-        palette.setBrush(QPalette::Inactive, QPalette::WindowText, brush);
-        palette.setBrush(QPalette::Inactive, QPalette::Button, brush1);
-        palette.setBrush(QPalette::Inactive, QPalette::Light, brush2);
-        palette.setBrush(QPalette::Inactive, QPalette::Midlight, brush3);
-        palette.setBrush(QPalette::Inactive, QPalette::Dark, brush4);
-        palette.setBrush(QPalette::Inactive, QPalette::Mid, brush5);
-        palette.setBrush(QPalette::Inactive, QPalette::Text, brush);
-        palette.setBrush(QPalette::Inactive, QPalette::BrightText, brush6);
-        palette.setBrush(QPalette::Inactive, QPalette::ButtonText, brush);
-        palette.setBrush(QPalette::Inactive, QPalette::Base, brush6);
-        palette.setBrush(QPalette::Inactive, QPalette::Window, brush1);
-        palette.setBrush(QPalette::Inactive, QPalette::Shadow, brush);
-        palette.setBrush(QPalette::Inactive, QPalette::AlternateBase, brush7);
-        palette.setBrush(QPalette::Inactive, QPalette::ToolTipBase, brush8);
-        palette.setBrush(QPalette::Inactive, QPalette::ToolTipText, brush);
-#if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
-        palette.setBrush(QPalette::Inactive, QPalette::PlaceholderText, brush9);
-#endif
-        palette.setBrush(QPalette::Disabled, QPalette::WindowText, brush4);
-        palette.setBrush(QPalette::Disabled, QPalette::Button, brush1);
-        palette.setBrush(QPalette::Disabled, QPalette::Light, brush2);
-        palette.setBrush(QPalette::Disabled, QPalette::Midlight, brush3);
-        palette.setBrush(QPalette::Disabled, QPalette::Dark, brush4);
-        palette.setBrush(QPalette::Disabled, QPalette::Mid, brush5);
-        palette.setBrush(QPalette::Disabled, QPalette::Text, brush4);
-        palette.setBrush(QPalette::Disabled, QPalette::BrightText, brush6);
-        palette.setBrush(QPalette::Disabled, QPalette::ButtonText, brush4);
-        palette.setBrush(QPalette::Disabled, QPalette::Base, brush1);
-        palette.setBrush(QPalette::Disabled, QPalette::Window, brush1);
-        palette.setBrush(QPalette::Disabled, QPalette::Shadow, brush);
-        palette.setBrush(QPalette::Disabled, QPalette::AlternateBase, brush1);
-        palette.setBrush(QPalette::Disabled, QPalette::ToolTipBase, brush8);
-        palette.setBrush(QPalette::Disabled, QPalette::ToolTipText, brush);
-#if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
-        palette.setBrush(QPalette::Disabled, QPalette::PlaceholderText, brush9);
-#endif
-        menubar->setPalette(palette);
         menuTools = new QMenu(menubar);
         menuTools->setObjectName(QString::fromUtf8("menuTools"));
         MainWindow->setMenuBar(menubar);
@@ -374,7 +294,6 @@ public:
         starbutton->setText(QCoreApplication::translate("MainWindow", "*", nullptr));
         display->setText(QString());
         Backspace->setText(QCoreApplication::translate("MainWindow", "X", nullptr));
-        OpenAddressBook->setText(QCoreApplication::translate("MainWindow", "Import Contact Book", nullptr));
         menuTools->setTitle(QCoreApplication::translate("MainWindow", "Tools", nullptr));
     } // retranslateUi
 

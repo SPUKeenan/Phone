@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_MainWindow_t {
-    QByteArrayData data[29];
-    char stringdata0[494];
+    QByteArrayData data[21];
+    char stringdata0[393];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -48,19 +48,11 @@ QT_MOC_LITERAL(12, 205, 18), // "on_button0_clicked"
 QT_MOC_LITERAL(13, 224, 22), // "on_poundbutton_clicked"
 QT_MOC_LITERAL(14, 247, 20), // "on_Backspace_clicked"
 QT_MOC_LITERAL(15, 268, 21), // "on_callbutton_clicked"
-QT_MOC_LITERAL(16, 290, 26), // "on_OpenAddressBook_clicked"
-QT_MOC_LITERAL(17, 317, 20), // "on_tableView_clicked"
-QT_MOC_LITERAL(18, 338, 11), // "QModelIndex"
-QT_MOC_LITERAL(19, 350, 5), // "index"
-QT_MOC_LITERAL(20, 356, 12), // "lookPersonUp"
-QT_MOC_LITERAL(21, 369, 39), // "std::vector<MyAddressBookMode..."
-QT_MOC_LITERAL(22, 409, 11), // "phoneNumber"
-QT_MOC_LITERAL(23, 421, 17), // "updateContactList"
-QT_MOC_LITERAL(24, 439, 4), // "list"
-QT_MOC_LITERAL(25, 444, 20), // "convertNameToNumbers"
-QT_MOC_LITERAL(26, 465, 4), // "name"
-QT_MOC_LITERAL(27, 470, 16), // "convertCharToNum"
-QT_MOC_LITERAL(28, 487, 6) // "letter"
+QT_MOC_LITERAL(16, 290, 20), // "on_tableView_clicked"
+QT_MOC_LITERAL(17, 311, 11), // "QModelIndex"
+QT_MOC_LITERAL(18, 323, 5), // "index"
+QT_MOC_LITERAL(19, 329, 39), // "on_actionImport_Contacts_List..."
+QT_MOC_LITERAL(20, 369, 23) // "on_actionExit_triggered"
 
     },
     "MainWindow\0on_button1_clicked\0\0"
@@ -70,12 +62,10 @@ QT_MOC_LITERAL(28, 487, 6) // "letter"
     "on_button8_clicked\0on_button9_clicked\0"
     "on_starbutton_clicked\0on_button0_clicked\0"
     "on_poundbutton_clicked\0on_Backspace_clicked\0"
-    "on_callbutton_clicked\0on_OpenAddressBook_clicked\0"
-    "on_tableView_clicked\0QModelIndex\0index\0"
-    "lookPersonUp\0std::vector<MyAddressBookModel::Person>\0"
-    "phoneNumber\0updateContactList\0list\0"
-    "convertNameToNumbers\0name\0convertCharToNum\0"
-    "letter"
+    "on_callbutton_clicked\0on_tableView_clicked\0"
+    "QModelIndex\0index\0"
+    "on_actionImport_Contacts_List_triggered\0"
+    "on_actionExit_triggered"
 };
 #undef QT_MOC_LITERAL
 
@@ -85,7 +75,7 @@ static const uint qt_meta_data_MainWindow[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-      20,   14, // methods
+      17,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -93,26 +83,23 @@ static const uint qt_meta_data_MainWindow[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,  114,    2, 0x08 /* Private */,
-       3,    0,  115,    2, 0x08 /* Private */,
-       4,    0,  116,    2, 0x08 /* Private */,
-       5,    0,  117,    2, 0x08 /* Private */,
-       6,    0,  118,    2, 0x08 /* Private */,
-       7,    0,  119,    2, 0x08 /* Private */,
-       8,    0,  120,    2, 0x08 /* Private */,
-       9,    0,  121,    2, 0x08 /* Private */,
-      10,    0,  122,    2, 0x08 /* Private */,
-      11,    0,  123,    2, 0x08 /* Private */,
-      12,    0,  124,    2, 0x08 /* Private */,
-      13,    0,  125,    2, 0x08 /* Private */,
-      14,    0,  126,    2, 0x08 /* Private */,
-      15,    0,  127,    2, 0x08 /* Private */,
-      16,    0,  128,    2, 0x08 /* Private */,
-      17,    1,  129,    2, 0x08 /* Private */,
-      20,    1,  132,    2, 0x08 /* Private */,
-      23,    1,  135,    2, 0x08 /* Private */,
-      25,    1,  138,    2, 0x08 /* Private */,
-      27,    1,  141,    2, 0x08 /* Private */,
+       1,    0,   99,    2, 0x08 /* Private */,
+       3,    0,  100,    2, 0x08 /* Private */,
+       4,    0,  101,    2, 0x08 /* Private */,
+       5,    0,  102,    2, 0x08 /* Private */,
+       6,    0,  103,    2, 0x08 /* Private */,
+       7,    0,  104,    2, 0x08 /* Private */,
+       8,    0,  105,    2, 0x08 /* Private */,
+       9,    0,  106,    2, 0x08 /* Private */,
+      10,    0,  107,    2, 0x08 /* Private */,
+      11,    0,  108,    2, 0x08 /* Private */,
+      12,    0,  109,    2, 0x08 /* Private */,
+      13,    0,  110,    2, 0x08 /* Private */,
+      14,    0,  111,    2, 0x08 /* Private */,
+      15,    0,  112,    2, 0x08 /* Private */,
+      16,    1,  113,    2, 0x08 /* Private */,
+      19,    0,  116,    2, 0x08 /* Private */,
+      20,    0,  117,    2, 0x08 /* Private */,
 
  // slots: parameters
     QMetaType::QString,
@@ -129,12 +116,9 @@ static const uint qt_meta_data_MainWindow[] = {
     QMetaType::QString,
     QMetaType::QString,
     QMetaType::Void,
+    QMetaType::Void, 0x80000000 | 17,   18,
     QMetaType::Void,
-    QMetaType::Void, 0x80000000 | 18,   19,
-    0x80000000 | 21, QMetaType::QString,   22,
-    QMetaType::Void, 0x80000000 | 21,   24,
-    QMetaType::QString, QMetaType::QString,   26,
-    QMetaType::Int, QMetaType::Char,   28,
+    QMetaType::Void,
 
        0        // eod
 };
@@ -172,15 +156,9 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 12: { QString _r = _t->on_Backspace_clicked();
             if (_a[0]) *reinterpret_cast< QString*>(_a[0]) = std::move(_r); }  break;
         case 13: _t->on_callbutton_clicked(); break;
-        case 14: _t->on_OpenAddressBook_clicked(); break;
-        case 15: _t->on_tableView_clicked((*reinterpret_cast< const QModelIndex(*)>(_a[1]))); break;
-        //case 16: { std::vector<MyAddressBookModel::Person> _r = _t->lookPersonUp((*reinterpret_cast< QString(*)>(_a[1])));
-        //    if (_a[0]) *reinterpret_cast< std::vector<MyAddressBookModel::Person>*>(_a[0]) = std::move(_r); }  break;
-        //case 17: _t->updateContactList((*reinterpret_cast< std::vector<MyAddressBookModel::Person>(*)>(_a[1]))); break;
-        //case 18: { QString _r = _t->convertNameToNumbers((*reinterpret_cast< QString(*)>(_a[1])));
-          //  if (_a[0]) *reinterpret_cast< QString*>(_a[0]) = std::move(_r); }  break;
-        //case 19: { int _r = _t->convertCharToNum((*reinterpret_cast< char(*)>(_a[1])));
-          //  if (_a[0]) *reinterpret_cast< int*>(_a[0]) = std::move(_r); }  break;
+        case 14: _t->on_tableView_clicked((*reinterpret_cast< const QModelIndex(*)>(_a[1]))); break;
+        case 15: _t->on_actionImport_Contacts_List_triggered(); break;
+        case 16: _t->on_actionExit_triggered(); break;
         default: ;
         }
     }
@@ -215,13 +193,13 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 20)
+        if (_id < 17)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 20;
+        _id -= 17;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 20)
+        if (_id < 17)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 20;
+        _id -= 17;
     }
     return _id;
 }
